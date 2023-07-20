@@ -1,0 +1,55 @@
+version: "3.1"
+services:
+  #  mockupdb:
+  #   image: mysql:8.0.21      
+  #   container_name: mockupdb
+  #   command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci #设置utf8字符集
+  #   restart: always
+  #   ports:
+  #     - "3306:3306"  # host物理直接映射端口为13306
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: 'Aa@6447985' # root管理员用户密码
+  #     MYSQL_DATABASE: 'mockup' # 初始化启动时要创建的数据库的名称
+  #    
+  #   volumes:
+  #     - ./data/mysql:/var/lib/mysql
+  #     - /etc/localtime:/etc/localtime
+  #   privileged: true 
+  #   networks:
+  #     - mockup
+        
+   mockup:
+    build:
+      context: ./server
+      dockerfile: ./Dockerfile
+    container_name: server
+    restart: always
+      - ./data/uploads/:/mockup/server/uploads/
+      - ./data/mockup/:/mockup/server/mockup/
+
+    volumes:
+    ports:
+      - '8888:8888'   
+    networks:
+      - cost
+      
+  mockupnginx:
+    image: nginx:latest
+    container_name: mockupnginx
+    ports:
+      - 8880:80  # 暴露端口
+    volumes: # 挂载
+      - ./conf/nginx/web:/usr/share/nginx/html
+      - ./conf/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - /etc/localtime:/etc/localtime
+    restart: always
+    privileged: true 
+    depends_on:
+      - mockup
+    networks:
+      - cost
+      
+      
+networks:
+  cost:
+    driver: bridge
