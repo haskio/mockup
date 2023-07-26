@@ -14,6 +14,8 @@ import auth from '@/directive/auth'
 import { store } from '@/pinia'
 import App from './App.vue'
 import { initDom } from './utils/positionToCode'
+ //中文
+
 
 initDom()
 /**

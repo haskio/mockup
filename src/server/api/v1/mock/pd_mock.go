@@ -28,11 +28,13 @@ var pdMockService = service.ServiceGroupApp.MockServiceGroup.PdMockService
 // @Router /pdMock/createPdMock [post]
 func (pdMockApi *PdMockApi) CreatePdMock(c *gin.Context) {
 	var pdMock mock.PdMock
+	var uid = utils.GetUserID(c)
 	err := c.ShouldBindJSON(&pdMock)
 	if err != nil {
 		response.FailWithMessage(err.Error(), c)
 		return
 	}
+	pdMock.Uid = int(uid)
 	verify := utils.Rules{
 		"Title": {utils.NotEmpty()},
 	}
@@ -163,14 +165,18 @@ func (pdMockApi *PdMockApi) FindPdMock(c *gin.Context) {
 // @Router /pdMock/getPdMockList [get]
 func (pdMockApi *PdMockApi) GetPdMockList(c *gin.Context) {
 	var pageInfo mockReq.PdMockSearch
+	var uid = utils.GetUserID(c)
 	err := c.ShouldBindQuery(&pageInfo)
 	if err != nil {
 		response.FailWithMessage(err.Error(), c)
 		return
 	}
-	if list, total, err := pdMockService.GetPdMockInfoList(pageInfo); err != nil {
+	if list, total, err := pdMockService.GetPdMockInfoList(uid, pageInfo); err != nil {
 		global.GVA_LOG.Error("获取失败!", zap.Error(err))
 		response.FailWithMessage("获取失败", c)
+	} else if uid == 0 {
+		global.GVA_LOG.Error("获取用户信息!", zap.Error(err))
+		response.FailWithMessage("用户信息不存在，请刷新或者重新登录后再试", c)
 	} else {
 		response.OkWithDetailed(response.PageResult{
 			List:     list,

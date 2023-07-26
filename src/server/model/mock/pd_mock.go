@@ -11,6 +11,7 @@ type PdMock struct {
 	Title       string `json:"title" form:"title" gorm:"column:title;comment:;"`
 	ShareUrl    string `json:"shareUrl" form:"shareUrl" gorm:"column:share_url;comment:;"`
 	ShareStatus bool   `json:"shareStatus" form:"shareStatus" gorm:"column:share_status;comment:;"`
+	Uid         int    `json:"uid"  form:"uid"  gorm:"column:uid;comment:;" `
 }
 
 // TableName PdMock 表名

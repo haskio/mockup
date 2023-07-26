@@ -112,7 +112,7 @@ mysql:
   config: charset=utf8mb4&parseTime=True&loc=Local
   db-name: mockup
   username: root
-  password: password
+  password: 123456
   prefix: ""
   singular: false
   engine: ""
