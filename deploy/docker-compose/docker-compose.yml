@@ -1,37 +1,42 @@
 version: "3.1"
 services:
-  #  mockupdb:
-  #   image: mysql:8.0.21      
-  #   container_name: mockupdb
-  #   command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci #设置utf8字符集
-  #   restart: always
-  #   ports:
-  #     - "3306:3306"  # host物理直接映射端口为13306
-  #   environment:
-  #     MYSQL_ROOT_PASSWORD: 'Aa@6447985' # root管理员用户密码
-  #     MYSQL_DATABASE: 'mockup' # 初始化启动时要创建的数据库的名称
-  #    
-  #   volumes:
-  #     - ./data/mysql:/var/lib/mysql
-  #     - /etc/localtime:/etc/localtime
-  #   privileged: true 
-  #   networks:
-  #     - mockup
+  mockupdb:
+    image: mysql:8.0.21      
+    container_name: mockupdb
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci 
+    restart: always
+    expose:
+      - 3306
+    ports:
+      - 3306:3306 
+    environment:
+      MYSQL_ROOT_PASSWORD: 'password' 
+      MYSQL_DATABASE: 'mockup' 
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+      - /etc/localtime:/etc/localtime
+      - ./conf/init/:/docker-entrypoint-initdb.d/
+    privileged: true 
+    networks:
+        mockup:
+         ipv4_address: 177.6.0.11
         
-   mockup:
+  mockup:
     build:
-      context: ./server
+      context: ../../src/server
       dockerfile: ./Dockerfile
     container_name: server
     restart: always
+    volumes: 
       - ./data/uploads/:/mockup/server/uploads/
       - ./data/mockup/:/mockup/server/mockup/
-
-    volumes:
     ports:
-      - '8888:8888'   
+      - 8888:8888
+    depends_on:
+      - mockupdb   
     networks:
-      - cost
+        mockup:
+          ipv4_address: 177.6.0.12
       
   mockupnginx:
     image: nginx:latest
@@ -39,17 +44,19 @@ services:
     ports:
       - 8880:80  # 暴露端口
     volumes: # 挂载
-      - ./conf/nginx/web:/usr/share/nginx/html
+      - ./conf/web:/usr/share/nginx/html
       - ./conf/nginx/nginx.conf:/etc/nginx/nginx.conf
       - /etc/localtime:/etc/localtime
     restart: always
     privileged: true 
-    depends_on:
-      - mockup
     networks:
-      - cost
+        mockup:
+          ipv4_address: 177.6.0.13
       
       
 networks:
-  cost:
+  mockup:
     driver: bridge
+    ipam:
+      config:
+        - subnet: '177.6.0.0/16'

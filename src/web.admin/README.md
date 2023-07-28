@@ -1,4 +1,3 @@
-# gin-vue-admin web 
 
 ## Project setup
 ```
