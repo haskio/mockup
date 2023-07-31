@@ -57,7 +57,7 @@
 
         <el-table-column align="left" label="发布" width="180">
             <template #default="scope">
-            <el-button type="primary" link icon="edit" class="table-button" @click="toRelease(scope.row)">查看发布</el-button>
+            <el-button type="primary" link icon="reading" class="table-button" @click="toRelease(scope.row)">查看发布</el-button>
             </template>
         </el-table-column>
 

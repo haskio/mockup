@@ -1,8 +1,7 @@
 <template>
   <div>
-
     <el-card>
-      <el-descriptions :title="mockupInfo.title" column="2">
+      <el-descriptions :title="mockupInfo.title" :column=2>
         <el-descriptions-item label="分享状态">
           <el-switch
             v-model="mockupInfo.shareStatus"
@@ -14,15 +13,13 @@
 
         <el-descriptions-item label="">
          
-
         </el-descriptions-item>
 
         <el-descriptions-item label="访问链接" >   {{  hostPath+ '/pd/'+ mockupInfo.shareUrl}}
-          
           </el-descriptions-item>
         <el-descriptions-item label="">
           <el-button type="primary" link icon="link" class="table-button"
-              @click="toMock(hostPath  + '/pd/'+ mockupInfo.shareUrl)">访问</el-button>
+              @click="toMock(hostPath  + '/front/#/pd/'+ mockupInfo.shareUrl)">访问</el-button>
         </el-descriptions-item>
         <el-descriptions-item label="备注1">每次关闭再开启的分享地址都不一样</el-descriptions-item>
         <el-descriptions-item label="">
@@ -30,7 +27,7 @@
         <el-descriptions-item label="备注2">分享功能需要部署用户端系统，否则无法访问</el-descriptions-item>
         <el-descriptions-item label="">
         </el-descriptions-item>
-        <el-descriptions-item label="备注2">关闭分享后，原型将无法访问</el-descriptions-item>
+        <el-descriptions-item label="备注3">关闭分享后，原型将无法访问</el-descriptions-item>
         <el-descriptions-item label="">        </el-descriptions-item>
 
 
@@ -58,12 +55,11 @@
         @selection-change="handleSelectionChange">
         <el-table-column type="selection" width="30" />
         <el-table-column align="left" label="版本" prop="ID" width="60" />
-
+        <el-table-column align="left" label="标题" prop="title" />
         <el-table-column align="left" label="发布日期" width="160">
           <template #default="scope">{{ formatDate(scope.row.CreatedAt) }}</template>
         </el-table-column>
 
-        <el-table-column align="left" label="发布说明" prop="releaseNote" />
 
         <el-table-column align="left" label="访问链接" prop="mockup_html" width="120">
           <template #default="scope">
@@ -90,21 +86,25 @@
       </div>
     </div>
 
-    <!-- 新增和编辑窗口 -->
-    <el-dialog v-model="dialogFormVisible" :before-close="closeDialog" :title="type === 'create' ? '添加发布' : '修改发布'"
+    <!-- 新增窗口 -->
+    <el-dialog v-model="dialogFormVisible" :before-close="closeDialog" title="添加发布"
       destroy-on-close>
       <el-form :model="formData" label-position="right" ref="elFormRef" :rules="rule" label-width="80px">
         <el-form-item label="产品ID:" prop="mockupId" display="disable" v-show="false">
           <el-input v-model.number="formData.mockupId" :clearable="true" placeholder="请输入" />
         </el-form-item>
+        <el-form-item label="标题" prop="title">
+          <el-input  v-model="formData.title" :clearable="true" placeholder="请输入" />
+        </el-form-item>
         <el-form-item label="发布说明:" prop="releaseNote">
-          <el-input type="textarea" rows="5" v-model="formData.releaseNote" :clearable="true" placeholder="请输入" />
+          <vue3-tinymce v-model="formData.releaseNote" :setting="state.setting"  script-src="/tinymce/tinymce.min.js"/>
         </el-form-item>
         <el-form-item label="文件:" prop="mockupFile">
           <SelectFile v-model="formData.mockupFile" />
         </el-form-item>
         <el-form-item label="说明：">
-          <text>请上传原型生成的html文件包，只能上传zip格式</text>
+          <text>请上传原型生成的html文件包，只能上传zip格式。</text>
+          <text>请保证压缩包里有start.html文件。</text>
         </el-form-item>
       </el-form>
       <template #footer>
@@ -114,6 +114,38 @@
         </div>
       </template>
     </el-dialog>
+
+
+
+      <!-- 编辑窗口 -->
+      <el-dialog v-model="dialogEditFormVisible" :before-close="closeDialog" title="修改发布"
+      destroy-on-close>
+      <el-form :model="formData" label-position="right" ref="elFormRef" :rules="editRule" label-width="80px">
+        <el-form-item label="产品ID:" prop="mockupId" display="disable" v-show="false">
+          <el-input v-model.number="formData.mockupId" :clearable="true" placeholder="请输入" />
+        </el-form-item>
+        <el-form-item label="标题" prop="title">
+          <el-input  v-model="formData.title" :clearable="true" placeholder="请输入" />
+        </el-form-item>
+        <el-form-item label="发布说明:" prop="releaseNote"  >
+          <vue3-tinymce v-model="formData.releaseNote" :setting="state.setting" />
+        </el-form-item>
+        <el-form-item label="文件:" prop="mockupFile">
+          <SelectFile v-model="formData.mockupFile" />
+        </el-form-item>
+        <el-form-item label="说明：">
+          <text>请上传原型生成的html文件包，只能上传zip格式。</text>
+          <text>请保证压缩包里有start.html文件。</text>
+        </el-form-item>
+      </el-form>
+      <template #footer>
+        <div class="dialog-footer">
+          <el-button @click="closeDialog">取 消</el-button>
+          <el-button type="primary" @click="enterDialog">确 定</el-button>
+        </div>
+      </template>
+    </el-dialog>
+
   </div>
 </template>
 
@@ -124,9 +156,8 @@ export default {
 </script>
 
 <script setup>
-
 import { findPdMock,updatePdMock } from '@/api/pdMock'
-
+import Vue3Tinymce from '@jsdawn/vue3-tinymce';
 import {
   createPdRelease,
   deletePdRelease,
@@ -145,6 +176,27 @@ import { ElMessage, ElMessageBox } from 'element-plus'
 import { ref, reactive } from 'vue'
 import { useRoute, onBeforeRouteUpdate } from 'vue-router'
 
+
+
+//tiny配置
+const state = reactive({
+  setting: {
+    menubar: false,
+    height: 220,
+    min_width: 3024,
+    toolbar:
+    'bold italic underline h1 h2 blockquote codesample numlist bullist  link   | removeformat fullscreen',
+    plugins: 'codesample  link  table lists    fullscreen ',
+    toolbar_mode: 'sliding',
+    nonbreaking_force_tab: true,
+    link_title: false,
+    link_default_target: '_blank',
+    content_style: 'body{font-size: 16px}',
+    resize: "both", 
+  },
+})
+
+
 const route = useRoute()
 // 自动化生成的字典（可能为空）以及字段
 const path = import.meta.env.VITE_BASE_PATH + '/'
@@ -161,6 +213,7 @@ const mockupInfo = ref({})
 
 const formData = ref({
   mockupId: 0,
+  title:'',
   releaseNote: '',
   mockup_html: '',
   mockupName: ''
@@ -168,7 +221,7 @@ const formData = ref({
 
 // 验证规则
 const rule = reactive({
-  mockupId: [{
+  title: [{
     required: true,
     message: '',
     trigger: ['input', 'blur'],
@@ -182,14 +235,24 @@ const rule = reactive({
   ],
 })
 
+
+const editRule = reactive({
+  title: [{
+    required: true,
+    message: '',
+    trigger: ['input', 'blur'],
+  },
+  ],
+})
+
+
+
+
 const getMockupInfo = async (id) => {
   const res = await findPdMock({ ID: id })
   if (res.code === 0) {
     mockupInfo.value = res.data.repdMock
-    //sharePath = path + mockupInfo.value.shareUrl
-    //isShare = mockupInfo.value.shareStatus
-   
-
+    console.log("mockuoinfo:",mockupId.value)
   }
 }
 
@@ -342,12 +405,13 @@ const type = ref('')
 const updatePdReleaseFunc = async (row) => {
   const res = await findPdRelease({ ID: row.ID })
   type.value = 'update'
-  console.log("res:", res);
+  //console.log("res:", res);
+  console.log("type:", type)
   if (res.code === 0) {
     //删掉返回的file文件的值
     delete res.data.repdRelease.mockupFile
     formData.value = res.data.repdRelease
-    dialogFormVisible.value = true
+    dialogEditFormVisible.value = true
   }
 }
 
@@ -369,6 +433,7 @@ const deletePdReleaseFunc = async (row) => {
 
 // 弹窗控制标记
 const dialogFormVisible = ref(false)
+const dialogEditFormVisible = ref(false)
 
 // 打开弹窗
 const openDialog = () => {
@@ -379,6 +444,7 @@ const openDialog = () => {
 // 关闭弹窗
 const closeDialog = () => {
   dialogFormVisible.value = false
+  dialogEditFormVisible.value = false
   formData.value = {
     releaseNote: '',
     mockup_html: '',
@@ -388,7 +454,6 @@ const closeDialog = () => {
 const enterDialog = async () => {
   elFormRef.value?.validate(async (valid) => {
     console.log('valid:',valid);
-    
     if (!valid) return
     let res
     switch (type.value) {
@@ -399,7 +464,9 @@ const enterDialog = async () => {
         break
       case 'update':
         formData.value.mockupId =  mockupId
-        formData.value.mockupFile = formData.value.mockupFile[0].url
+        if (formData.value.mockupFile != null )  {
+          formData.value.mockupFile = formData.value.mockupFile[0].url
+        }
         res = await updatePdRelease(formData.value)
         break
       default:
@@ -444,5 +511,9 @@ const toMock = async (url) => {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
+}
+
+.tox {
+  width: 100%  !important;
 }
 </style>

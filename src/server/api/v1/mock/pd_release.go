@@ -119,8 +119,7 @@ func (pdReleaseApi *PdReleaseApi) UpdatePdRelease(c *gin.Context) {
 	}
 	pdRelease.UpdatedBy = utils.GetUserID(c)
 	verify := utils.Rules{
-		"MockupId":   {utils.NotEmpty()},
-		"MockupFile": {utils.NotEmpty()},
+		"MockupId": {utils.NotEmpty()},
 	}
 	if err := utils.Verify(pdRelease, verify); err != nil {
 		response.FailWithMessage(err.Error(), c)

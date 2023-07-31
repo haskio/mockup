@@ -9,7 +9,8 @@ import (
 type PdRelease struct {
 	global.GVA_MODEL
 	MockupId    int    `json:"mockupId" form:"mockupId" gorm:"column:mockup_id;comment:关联原型id;"`
-	ReleaseNote string `json:"releaseNote" form:"releaseNote" gorm:"column:release_note;comment:发布说明;"`
+	Title       string `json:"title" form:"title" gorm:"column:title;comment:发布说明;"`
+	ReleaseNote string `json:"releaseNote" form:"releaseNote" gorm:"column:release_note;type:longtext;comment:发布说明;"`
 	MockupFile  string `json:"mockupFile" form:"mockupFile" gorm:"column:mockup_file;comment:原型文件;"`
 	Mockup_html string `json:"mockup_html" form:"mockup_html" gorm:"column:mockup_html;comment:原型访问链接;"`
 	CreatedBy   uint   `gorm:"column:created_by;comment:创建者"`

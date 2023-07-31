@@ -16,8 +16,8 @@
 
                     </v-col>
                     <v-col>
-                        <v-sheet min-height="80vh" rounded="3">
-                            <v-col>
+                        <!-- <v-sheet min-height="80vh" rounded="3"> -->
+                        <!-- <v-col>
                                 <v-card class='ma-3' v-for="item in releaseList " :key="item.id">
                                     <v-row no-gutters>
                                         <v-col cols="1" class="d-flex  justify-left align-center mx-3" max-width="100">
@@ -41,8 +41,42 @@
                                     <v-pagination v-model="queryinfo.page" :length=" Math.ceil(this.total /queryinfo.pageSize)" total-visible="5" rounded="circle"  
                                     @input="getMockupInfo()"></v-pagination>
                                 </div>
-                            </v-col>
-                        </v-sheet>
+                            </v-col> -->
+
+                        <v-timeline side="end" dense>
+                            <v-timeline-item v-for="item in releaseList" :key="item.id" size="small" right>
+                                <v-alert :value="true">
+                                    <v-card>
+                                        <v-card-title class="align-left mx-3">版本{{ item.ID }} :{{ item.title
+                                        }}</v-card-title>
+
+                                        <v-card-text>
+
+                                            <v-row align="center" class="mx-0">
+                                                <v-card-subtitle> <v-icon> mdi-calendar-month</v-icon>
+                                                {{ item.UpdatedAt | dateformat('YYYY-MM-DD HH:ss') }}</v-card-subtitle>
+                                            </v-row>
+                                            <v-divider> </v-divider>
+                                            <div v-dompurify-html ="item.releaseNote"></div>
+                                        </v-card-text>
+                                        <v-divider> </v-divider>
+
+                                        <v-card-actions>
+                                            <v-btn style="left: 45%;" @click="toHtml(item.mockup_html)">点击访问原型</v-btn>
+                                        </v-card-actions>
+
+
+
+
+                                    </v-card>
+
+                                </v-alert>
+                            </v-timeline-item>
+                        </v-timeline>
+
+
+
+                        <!-- </v-sheet> -->
                     </v-col>
                 </v-row>
             </v-container>
@@ -74,6 +108,7 @@ export default {
 
     },
     created() {
+        //console.log('id:', this.id);
         this.getMockupInfo();
 
     },
@@ -81,6 +116,7 @@ export default {
     methods: {
         //获取产品信息
         async getMockupInfo() {
+            //console.log('http:', this.$http)
             const { data: res } = await this.$http.get(`pdguest/findPdUrl?shareUrl=${this.id}`)
             if (res.code == 0) {
                 this.queryinfo.mockupId = res.data.repdMock.ID
@@ -95,7 +131,7 @@ export default {
                 this.releaseList = res1.data.list
                 this.total = res1.data.total
 
-                console.log("list", this.releaseList);
+                //console.log("list", this.releaseList);
             }
 
             this.mockupInfo = res.data.repdMock
@@ -104,13 +140,13 @@ export default {
         },
 
         toHtml(url) {
-            const toUrl =  this.$http.defaults.baseURL +'/' + url
-            console.log(toUrl);
-            
+            const toUrl = this.$http.defaults.baseURL + '/' + url
+            //console.log(toUrl);
+
             window.open(toUrl, '_blank')
         },
 
-        
+
     },
     computed: {
         id() {
