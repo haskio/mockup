@@ -36,8 +36,7 @@
 
 ### 分享端
 
-https://pd.wuyusoft.com/api/mockup/fda191d3-a7a0-4319-a41d-16c06f4b3a4b/%E7%B3%BB%E7%BB%9F
-
+[点击访问](http://pd.wuyusoft.com/pd/ea65a74f-dce0-4b04-bb9f-7e64aaa547b5)
 
 
 ### 管理端： 
