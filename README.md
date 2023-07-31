@@ -36,8 +36,7 @@
 
 ### 分享端
 
-[点击访问](http://pd.wuyusoft.com/pd/ea65a74f-dce0-4b04-bb9f-7e64aaa547b5)
-
+[点击访问](http://pd.wuyusoft.com/pd/84439d71-cb9e-4ef7-a541-c123ac3fab05)
 
 ### 管理端： 
 
