@@ -22,7 +22,7 @@
           </el-descriptions-item>
         <el-descriptions-item label="">
           <el-button type="primary" link icon="link" class="table-button"
-              @click="toMock(hostPath  + '/pd/'+ mockupInfo.shareUrl)">访问</el-button>
+              @click="toMock(hostPath  + '/front/#/pd/'+ mockupInfo.shareUrl)">访问</el-button>
         </el-descriptions-item>
         <el-descriptions-item label="备注1">每次关闭再开启的分享地址都不一样</el-descriptions-item>
         <el-descriptions-item label="">
@@ -30,7 +30,7 @@
         <el-descriptions-item label="备注2">分享功能需要部署用户端系统，否则无法访问</el-descriptions-item>
         <el-descriptions-item label="">
         </el-descriptions-item>
-        <el-descriptions-item label="备注2">关闭分享后，原型将无法访问</el-descriptions-item>
+        <el-descriptions-item label="备注3">关闭分享后，原型将无法访问</el-descriptions-item>
         <el-descriptions-item label="">        </el-descriptions-item>
 
 
@@ -104,7 +104,9 @@
           <SelectFile v-model="formData.mockupFile" />
         </el-form-item>
         <el-form-item label="说明：">
-          <text>请上传原型生成的html文件包，只能上传zip格式</text>
+          <text>请上传原型生成的html文件包，只能上传zip格式。</text>
+          <text>请保证压缩包里有start.html文件。</text>
+
         </el-form-item>
       </el-form>
       <template #footer>

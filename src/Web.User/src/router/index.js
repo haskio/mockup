@@ -13,20 +13,16 @@ const routes = [
     component: Home,
     meta:{title:'无鱼原型管理系统'},
     children:[
-      {path:'/',component:About ,meta:{title:'首页'},props:true}
+      {path:'/',component:About ,meta:{title:'首页'},props:true},
     ]
   },
-  {
-    path: '/pd/:id',
-    name: 'pd',
-    component: Release,
-    meta:{title:'原型列表'}
-  },
+  {path: '/pd/:id', component: Release,meta:{title:'原型列表'}, props:true },
 ]
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
+  base: '/front/',
+  mode: 'hash',
+  // base: process.env.BASE_URL,
   routes
 })
 

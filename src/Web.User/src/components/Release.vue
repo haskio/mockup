@@ -74,6 +74,7 @@ export default {
 
     },
     created() {
+        console.log('id:',this.id);
         this.getMockupInfo();
 
     },
@@ -81,6 +82,7 @@ export default {
     methods: {
         //获取产品信息
         async getMockupInfo() {
+            console.log('http:',this.$http)
             const { data: res } = await this.$http.get(`pdguest/findPdUrl?shareUrl=${this.id}`)
             if (res.code == 0) {
                 this.queryinfo.mockupId = res.data.repdMock.ID

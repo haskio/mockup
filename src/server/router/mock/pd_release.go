@@ -28,6 +28,6 @@ func (s *PdReleaseRouter) InitPdReleaseRouter(Router *gin.RouterGroup, RouterPub
 		pdReleaseRouterWithoutRecord.GET("getPdReleaseList", pdReleaseApi.GetPdReleaseList) // 获取PdRelease列表
 	}
 	{
-		pdPublicReleaseRouterWithoutRecord.GET("findPdRelease", pdReleaseApi.GetPdReleaseList) // 根据ID获取PdRelease
+		pdPublicReleaseRouterWithoutRecord.GET("findPdRelease", pdReleaseApi.GetPdReleaseList) // 公开接口根据ID获取PdRelease
 	}
 }

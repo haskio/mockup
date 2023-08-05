@@ -1,7 +1,6 @@
 package mock
 
 import (
-	"fmt"
 	"github.com/flipped-aurora/gin-vue-admin/server/global"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/common/response"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/mock"
@@ -31,8 +30,8 @@ func (PdGuestApi *PdGuestApi) FindPdMockByUrl(c *gin.Context) {
 		return
 	}
 
-	fmt.Println("mockup", pdMock)
-	fmt.Println("url", pdMock.ShareUrl)
+	//fmt.Println("mockup", pdMock)
+	//fmt.Println("url", pdMock.ShareUrl)
 
 	if repdMock, err := pdMockService.GetPdMockByUrl(pdMock.ShareUrl); err != nil {
 		global.GVA_LOG.Error("查询失败!", zap.Error(err))

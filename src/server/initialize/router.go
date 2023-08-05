@@ -78,7 +78,7 @@ func Routers() *gin.Engine {
 		mockRouter.InitPdMockRouter(PrivateGroup)
 		mockRouter.InitPdReleaseRouter(PrivateGroup, PublicGroup)
 		mockRouter.InitPdGuestRouter(PublicGroup) // 注册外部用户功能
-
+		//mockRouter.InitHtml(PublicGroup)
 	}
 
 	global.GVA_LOG.Info("router register success")

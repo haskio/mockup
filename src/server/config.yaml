@@ -204,7 +204,7 @@ timer:
     interval: 168h
 zap:
   level: info
-  prefix: '[github.com/flipped-aurora/gin-vue-admin/server]'
+  prefix: '【mokcup-server】'
   format: console
   director: log
   encode-level: LowercaseColorLevelEncoder
