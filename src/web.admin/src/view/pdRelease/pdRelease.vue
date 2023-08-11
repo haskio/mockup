@@ -105,6 +105,10 @@
         <el-form-item label="说明：">
           <text>请上传原型生成的html文件包，只能上传zip格式。</text>
           <text>请保证压缩包里有start.html文件。</text>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 52c4f01573c4f96a372669298fee7d7834362657
         </el-form-item>
       </el-form>
       <template #footer>

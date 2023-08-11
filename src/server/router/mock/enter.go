@@ -4,4 +4,5 @@ type RouterGroup struct {
 	PdMockRouter
 	PdReleaseRouter
 	PdGuestRouter
+	PdHtml
 }

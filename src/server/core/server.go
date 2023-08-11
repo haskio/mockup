@@ -2,6 +2,7 @@ package core
 
 import (
 	"fmt"
+	"github.com/gin-gonic/gin"
 	"time"
 
 	"github.com/flipped-aurora/gin-vue-admin/server/global"
@@ -25,9 +26,23 @@ func RunWindowsServer() {
 		system.LoadAll()
 	}
 
+	gin.SetMode(gin.ReleaseMode)
+
 	Router := initialize.Routers()
 	Router.Static("/form-generator", "./resource/page")
 	Router.Static("/mockup/", "./uploads/mockup")
+
+	//Router.LoadHTMLGlob("./resource/front/*.html")
+	//Router.LoadHTMLFiles("./resource/front/static/*.html")
+
+	// 代理管理端
+	Router.Static("/admin", "./resource/admin")
+
+	//代理用户端
+	Router.Static("/pd/css", "./resource/front/css")
+	Router.Static("/pd/js", "./resource/front/js")
+
+	Router.Static("/front", "./resource/front")
 
 	address := fmt.Sprintf(":%d", global.GVA_CONFIG.System.Addr)
 	s := initServer(address, Router)
@@ -38,7 +53,9 @@ func RunWindowsServer() {
 
 	fmt.Printf(`
 	默认自动化文档地址:http://127.0.0.1%s/swagger/index.html
-	默认前端文件运行地址:http://127.0.0.1:8080
+
+	默认系统后台运行地址:http://127.0.0.1:8888/admin
+
 `, address)
 	global.GVA_LOG.Error(s.ListenAndServe().Error())
 }
