@@ -1,6 +1,7 @@
 package mock
 
 import (
+	"fmt"
 	"github.com/flipped-aurora/gin-vue-admin/server/global"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/common/request"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/common/response"
@@ -29,12 +30,19 @@ var pdMockService = service.ServiceGroupApp.MockServiceGroup.PdMockService
 func (pdMockApi *PdMockApi) CreatePdMock(c *gin.Context) {
 	var pdMock mock.PdMock
 	var uid = utils.GetUserID(c)
+
+	if uid == 0 {
+		response.FailWithMessage("创建失败,创建用户不能为空", c)
+		return
+	}
+
 	err := c.ShouldBindJSON(&pdMock)
 	if err != nil {
 		response.FailWithMessage(err.Error(), c)
 		return
 	}
 	pdMock.Uid = int(uid)
+	fmt.Println("uid:", pdMock.Uid)
 	verify := utils.Rules{
 		"Title": {utils.NotEmpty()},
 	}

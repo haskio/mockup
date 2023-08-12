@@ -437,6 +437,29 @@ func (b *BaseApi) GetUserInfo(c *gin.Context) {
 	response.OkWithDetailed(gin.H{"userInfo": ReqUser}, "获取成功", c)
 }
 
+// GetUseById
+// @Tags      SysUser
+// @Summary   根据Id获取用户信息
+// @Security  ApiKeyAuth
+// @accept    application/json
+// @Produce   application/json
+// @Success   200  {object}  response.Response{data=map[string]interface{},msg=string}  "获取用户信息"
+// @Router    /user/getUserInfo [get]
+func (b *BaseApi) GetUser(c *gin.Context) {
+	//uuid := utils.GetUserUuid(c)
+	var reqId request.GetById
+	err := c.ShouldBindJSON(&reqId)
+
+	ReqUser, err := userService.FindUserById(reqId.ID)
+	if err != nil {
+		response.FailWithDetailed(gin.H{
+			"code": 6,
+		}, "查询用户失败"+err.Error(), c)
+		return
+	}
+	response.OkWithDetailed(gin.H{"userInfo": ReqUser}, "获取成功", c)
+}
+
 // ResetPassword
 // @Tags      SysUser
 // @Summary   重置用户密码

@@ -59,7 +59,8 @@
         <el-table-column align="left" label="发布日期" width="160">
           <template #default="scope">{{ formatDate(scope.row.CreatedAt) }}</template>
         </el-table-column>
-
+        <el-table-column align="left" label="发布日期" width="160">
+        </el-table-column>
 
         <el-table-column align="left" label="访问链接" prop="mockup_html" width="120">
           <template #default="scope">
@@ -89,7 +90,7 @@
     <!-- 新增窗口 -->
     <el-dialog v-model="dialogFormVisible" :before-close="closeDialog" title="添加发布"
       destroy-on-close>
-      <el-form :model="formData" label-position="right" ref="elFormRef" :rules="rule" label-width="80px">
+      <el-form :model="formData" label-position="right" ref="elFormRef" :rules="rule" label-width="auto">
         <el-form-item label="产品ID:" prop="mockupId" display="disable" v-show="false">
           <el-input v-model.number="formData.mockupId" :clearable="true" placeholder="请输入" />
         </el-form-item>
@@ -105,10 +106,6 @@
         <el-form-item label="说明：">
           <text>请上传原型生成的html文件包，只能上传zip格式。</text>
           <text>请保证压缩包里有start.html文件。</text>
-<<<<<<< HEAD
-=======
-
->>>>>>> 52c4f01573c4f96a372669298fee7d7834362657
         </el-form-item>
       </el-form>
       <template #footer>
@@ -186,11 +183,10 @@ import { useRoute, onBeforeRouteUpdate } from 'vue-router'
 const state = reactive({
   setting: {
     menubar: false,
-    height: 220,
-    min_width: 3024,
+    height: 380,
     toolbar:
-    'bold italic underline h1 h2 blockquote codesample numlist bullist  link   | removeformat fullscreen',
-    plugins: 'codesample  link  table lists    fullscreen ',
+    'bold italic underline h1 h2 blockquote codesample numlist bullist  link | removeformat fullscreen',
+    plugins: 'codesample  link  table lists fullscreen ',
     toolbar_mode: 'sliding',
     nonbreaking_force_tab: true,
     link_title: false,
@@ -256,7 +252,7 @@ const getMockupInfo = async (id) => {
   const res = await findPdMock({ ID: id })
   if (res.code === 0) {
     mockupInfo.value = res.data.repdMock
-    console.log("mockuoinfo:",mockupId.value)
+    console.log("mockuoinfo:",mockupInfo.value)
   }
 }
 

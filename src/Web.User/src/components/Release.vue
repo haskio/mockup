@@ -3,62 +3,49 @@
         <Topbar> </Topbar>
         <v-main class="grey lighten-3">
             <v-container>
-                <v-row>
-                    <v-col cols="3">
-                        <v-card>
-                            <v-card-title>
-                                <v-col>
-                                    <h6>产品名称</h6>
-                                    <div> {{ mockupInfo !== undefined ? mockupInfo.title : "该产品不存在" }}</div>
-                                </v-col>
-                            </v-card-title>
-                        </v-card>
-
-                    </v-col>
+                <v-row class=" mb-6  no-gutters">
                     <v-col>
-                        <!-- <v-sheet min-height="80vh" rounded="3"> -->
-                        <!-- <v-col>
-                                <v-card class='ma-3' v-for="item in releaseList " :key="item.id">
-                                    <v-row no-gutters>
-                                        <v-col cols="1" class="d-flex  justify-left align-center mx-3" max-width="100">
-                                            <v-chip max-height="100" max-width="100" color="pink" label class="white--text">
-                                                {{ item.ID }} </v-chip>
-                                        </v-col>
-                                        <v-col>
-                                            <v-card-text class="align-left mx-3">{{ item.releaseNote }}</v-card-text>
+                        <v-card style="width: 100%;">
+                            <v-col>
+                                <v-card-title>
+                                    <h6>产品名称:</h6>
+                                </v-card-title>
+                                <v-card-subtitle>{{ mockupInfo !== undefined ? mockupInfo.title : "该产品不存在"
+                                }}</v-card-subtitle>
+                            </v-col>
+                        </v-card>
+                    </v-col>
 
-                                            <v-divider></v-divider>
-
-                                            <v-card-text>
-                                                <v-icon> mdi-calendar-month</v-icon>
-                                                <span class="mr-2">{{ item.UpdatedAt  | dateformat('YYYY-MM-DD HH:ss') }}</span>
-                                                <v-btn style="float: right;" @click="toHtml(item.mockup_html)">访问原型</v-btn>
-                                            </v-card-text>
-                                        </v-col>
-                                    </v-row>
-                                </v-card>
-                                <div class="text-center">
-                                    <v-pagination v-model="queryinfo.page" :length=" Math.ceil(this.total /queryinfo.pageSize)" total-visible="5" rounded="circle"  
-                                    @input="getMockupInfo()"></v-pagination>
-                                </div>
-                            </v-col> -->
-
+                    <v-col cols="10">
                         <v-timeline side="end" dense>
                             <v-timeline-item v-for="item in releaseList" :key="item.id" size="small" right>
                                 <v-alert :value="true">
+
                                     <v-card>
-                                        <v-card-title class="align-left mx-3">版本{{ item.ID }} :{{ item.title
-                                        }}</v-card-title>
 
+                                        <v-card-title class="align-center mx-3 ">版本{{ item.ID }} :{{
+                                            item.title }}</v-card-title>
                                         <v-card-text>
-
                                             <v-row align="center" class="mx-0">
                                                 <v-card-subtitle> <v-icon> mdi-calendar-month</v-icon>
-                                                {{ item.UpdatedAt | dateformat('YYYY-MM-DD HH:ss') }}</v-card-subtitle>
+                                                    {{ item.UpdatedAt | dateformat('YYYY-MM-DD HH:ss') }}</v-card-subtitle>
                                             </v-row>
-                                            <v-divider> </v-divider>
-                                            <div v-dompurify-html ="item.releaseNote"></div>
+
                                         </v-card-text>
+                                        <v-card-text> 发布说明 </v-card-text>
+                                        <v-divider> </v-divider>
+
+                                        <v-divider> </v-divider>
+
+                                        <v-card-text>
+                                            <div v-dompurify-html="item.releaseNote"></div>
+
+                                        </v-card-text>
+
+
+                                        <v-card-text> 相关资源</v-card-text>
+
+
                                         <v-divider> </v-divider>
 
                                         <v-card-actions>
@@ -108,23 +95,13 @@ export default {
 
     },
     created() {
-<<<<<<< HEAD
-        //console.log('id:', this.id);
-=======
-        console.log('id:',this.id);
->>>>>>> 52c4f01573c4f96a372669298fee7d7834362657
         this.getMockupInfo();
-
     },
 
     methods: {
         //获取产品信息
         async getMockupInfo() {
-<<<<<<< HEAD
-            //console.log('http:', this.$http)
-=======
-            console.log('http:',this.$http)
->>>>>>> 52c4f01573c4f96a372669298fee7d7834362657
+            console.log('http:', this.$http)
             const { data: res } = await this.$http.get(`pdguest/findPdUrl?shareUrl=${this.id}`)
             if (res.code == 0) {
                 this.queryinfo.mockupId = res.data.repdMock.ID
