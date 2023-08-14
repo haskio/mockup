@@ -98,7 +98,7 @@
           <el-input  v-model="formData.title" :clearable="true" placeholder="请输入" />
         </el-form-item>
         <el-form-item label="发布说明:" prop="releaseNote">
-          <vue3-tinymce v-model="formData.releaseNote" :setting="state.setting"  script-src="/tinymce/tinymce.min.js"/>
+          <vue3-tinymce v-model="formData.releaseNote" :setting="state.setting"  script-src="tinymce/tinymce.min.js"/>
         </el-form-item>
         <el-form-item label="文件:" prop="mockupFile">
           <SelectFile v-model="formData.mockupFile" />
@@ -201,11 +201,16 @@ const route = useRoute()
 // 自动化生成的字典（可能为空）以及字段
 const path = import.meta.env.VITE_BASE_PATH + '/'
 
+// const editPath = getUrl(path)  + 'admin/tinymce/tinymce.min.js'
+// console.log("path:",editPath)
+
 const mockupId = parseInt(route.params.id)   
 onBeforeRouteUpdate((to) => {
   if (to.name === 'PdRelease') {
     formData.mockupId = to.params.id
   }
+
+  //console.log("path:",editPath)
 })
 
 
@@ -252,7 +257,7 @@ const getMockupInfo = async (id) => {
   const res = await findPdMock({ ID: id })
   if (res.code === 0) {
     mockupInfo.value = res.data.repdMock
-    console.log("mockuoinfo:",mockupInfo.value)
+    //console.log("mockuoinfo:",mockupInfo.value)
   }
 }
 
@@ -490,7 +495,7 @@ const downloadFile = (url) => {
 
 //跳转链接
 const toHtml = async (url) => {
-  console.log('url:', url);
+ //console.log('url:', url);
   url = url + 'start.html'
   window.open(getUrl(url), '_blank')
 }
@@ -498,7 +503,7 @@ const toHtml = async (url) => {
 const hostPath =  window.location.protocol +  '//' + window.location.host
 const toMock = async (url) => {
   //url = hostPath + url
-  console.log('url:', url);
+  //console.log('url:', url);
   window.open(url, '_blank')
 }
 

@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : locall_mysql8
+ Source Server         : 本机8
  Source Server Type    : MySQL
  Source Server Version : 80012
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 80012
  File Encoding         : 65001
 
- Date: 16/07/2023 11:37:53
+ Date: 12/08/2023 23:29:51
 */
 
 SET NAMES utf8mb4;
@@ -34,154 +34,169 @@ CREATE TABLE `casbin_rule`  (
   `v7` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `idx_casbin_rule`(`ptype` ASC, `v0` ASC, `v1` ASC, `v2` ASC, `v3` ASC, `v4` ASC, `v5` ASC, `v6` ASC, `v7` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 580 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 631 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of casbin_rule
 -- ----------------------------
-INSERT INTO `casbin_rule` VALUES (488, 'p', '888', '/api/createApi', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (489, 'p', '888', '/api/deleteApi', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (494, 'p', '888', '/api/deleteApisByIds', 'DELETE', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (492, 'p', '888', '/api/getAllApis', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (493, 'p', '888', '/api/getApiById', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (491, 'p', '888', '/api/getApiList', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (490, 'p', '888', '/api/updateApi', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (495, 'p', '888', '/authority/copyAuthority', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (496, 'p', '888', '/authority/createAuthority', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (497, 'p', '888', '/authority/deleteAuthority', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (499, 'p', '888', '/authority/getAuthorityList', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (500, 'p', '888', '/authority/setDataAuthority', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (498, 'p', '888', '/authority/updateAuthority', 'PUT', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (564, 'p', '888', '/authorityBtn/canRemoveAuthorityBtn', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (563, 'p', '888', '/authorityBtn/getAuthorityBtn', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (562, 'p', '888', '/authorityBtn/setAuthorityBtn', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (536, 'p', '888', '/autoCode/createPackage', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (533, 'p', '888', '/autoCode/createPlug', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (530, 'p', '888', '/autoCode/createTemp', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (538, 'p', '888', '/autoCode/delPackage', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (542, 'p', '888', '/autoCode/delSysHistory', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (532, 'p', '888', '/autoCode/getColumn', 'GET', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (528, 'p', '888', '/autoCode/getDB', 'GET', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (539, 'p', '888', '/autoCode/getMeta', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (537, 'p', '888', '/autoCode/getPackage', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (541, 'p', '888', '/autoCode/getSysHistory', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (529, 'p', '888', '/autoCode/getTables', 'GET', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (534, 'p', '888', '/autoCode/installPlugin', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (531, 'p', '888', '/autoCode/preview', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (535, 'p', '888', '/autoCode/pubPlug', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (540, 'p', '888', '/autoCode/rollback', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (502, 'p', '888', '/casbin/getPolicyPathByAuthorityId', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (501, 'p', '888', '/casbin/updateCasbin', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (566, 'p', '888', '/chatGpt/createSK', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (568, 'p', '888', '/chatGpt/deleteSK', 'DELETE', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (567, 'p', '888', '/chatGpt/getSK', 'GET', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (565, 'p', '888', '/chatGpt/getTable', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (525, 'p', '888', '/customer/customer', 'DELETE', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (526, 'p', '888', '/customer/customer', 'GET', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (524, 'p', '888', '/customer/customer', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (523, 'p', '888', '/customer/customer', 'PUT', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (527, 'p', '888', '/customer/customerList', 'GET', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (561, 'p', '888', '/email/emailTest', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (513, 'p', '888', '/fileUploadAndDownload/breakpointContinue', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (514, 'p', '888', '/fileUploadAndDownload/breakpointContinueFinish', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (517, 'p', '888', '/fileUploadAndDownload/deleteFile', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (518, 'p', '888', '/fileUploadAndDownload/editFileName', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (512, 'p', '888', '/fileUploadAndDownload/findFile', 'GET', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (519, 'p', '888', '/fileUploadAndDownload/getFileList', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (515, 'p', '888', '/fileUploadAndDownload/removeChunk', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (516, 'p', '888', '/fileUploadAndDownload/upload', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (477, 'p', '888', '/jwt/jsonInBlacklist', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (503, 'p', '888', '/menu/addBaseMenu', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (511, 'p', '888', '/menu/addMenuAuthority', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (505, 'p', '888', '/menu/deleteBaseMenu', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (507, 'p', '888', '/menu/getBaseMenuById', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (509, 'p', '888', '/menu/getBaseMenuTree', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (504, 'p', '888', '/menu/getMenu', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (510, 'p', '888', '/menu/getMenuAuthority', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (508, 'p', '888', '/menu/getMenuList', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (506, 'p', '888', '/menu/updateBaseMenu', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (569, 'p', '888', '/pdMock/createPdMock', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (570, 'p', '888', '/pdMock/deletePdMock', 'DELETE', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (571, 'p', '888', '/pdMock/deletePdMockByIds', 'DELETE', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (573, 'p', '888', '/pdMock/findPdMock', 'GET', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (574, 'p', '888', '/pdMock/getPdMockList', 'GET', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (572, 'p', '888', '/pdMock/updatePdMock', 'PUT', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (575, 'p', '888', '/pdRelease/createPdRelease', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (576, 'p', '888', '/pdRelease/deletePdRelease', 'DELETE', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (577, 'p', '888', '/pdRelease/deletePdReleaseByIds', 'DELETE', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (579, 'p', '888', '/pdRelease/findPdRelease', 'GET', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (580, 'p', '888', '/pdRelease/getPdReleaseList', 'GET', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (578, 'p', '888', '/pdRelease/updatePdRelease', 'PUT', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (559, 'p', '888', '/simpleUploader/checkFileMd5', 'GET', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (560, 'p', '888', '/simpleUploader/mergeFileMd5', 'GET', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (558, 'p', '888', '/simpleUploader/upload', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (548, 'p', '888', '/sysDictionary/createSysDictionary', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (549, 'p', '888', '/sysDictionary/deleteSysDictionary', 'DELETE', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (551, 'p', '888', '/sysDictionary/findSysDictionary', 'GET', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (552, 'p', '888', '/sysDictionary/getSysDictionaryList', 'GET', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (550, 'p', '888', '/sysDictionary/updateSysDictionary', 'PUT', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (544, 'p', '888', '/sysDictionaryDetail/createSysDictionaryDetail', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (545, 'p', '888', '/sysDictionaryDetail/deleteSysDictionaryDetail', 'DELETE', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (546, 'p', '888', '/sysDictionaryDetail/findSysDictionaryDetail', 'GET', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (547, 'p', '888', '/sysDictionaryDetail/getSysDictionaryDetailList', 'GET', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (543, 'p', '888', '/sysDictionaryDetail/updateSysDictionaryDetail', 'PUT', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (553, 'p', '888', '/sysOperationRecord/createSysOperationRecord', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (556, 'p', '888', '/sysOperationRecord/deleteSysOperationRecord', 'DELETE', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (557, 'p', '888', '/sysOperationRecord/deleteSysOperationRecordByIds', 'DELETE', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (554, 'p', '888', '/sysOperationRecord/findSysOperationRecord', 'GET', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (555, 'p', '888', '/sysOperationRecord/getSysOperationRecordList', 'GET', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (520, 'p', '888', '/system/getServerInfo', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (521, 'p', '888', '/system/getSystemConfig', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (522, 'p', '888', '/system/setSystemConfig', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (479, 'p', '888', '/user/admin_register', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (485, 'p', '888', '/user/changePassword', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (478, 'p', '888', '/user/deleteUser', 'DELETE', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (483, 'p', '888', '/user/getUserInfo', 'GET', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (480, 'p', '888', '/user/getUserList', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (487, 'p', '888', '/user/resetPassword', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (482, 'p', '888', '/user/setSelfInfo', 'PUT', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (484, 'p', '888', '/user/setUserAuthorities', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (486, 'p', '888', '/user/setUserAuthority', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (481, 'p', '888', '/user/setUserInfo', 'PUT', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (133, 'p', '9528', '/api/createApi', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (136, 'p', '9528', '/api/deleteApi', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (138, 'p', '9528', '/api/getAllApis', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (135, 'p', '9528', '/api/getApiById', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (134, 'p', '9528', '/api/getApiList', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (137, 'p', '9528', '/api/updateApi', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (139, 'p', '9528', '/authority/createAuthority', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (140, 'p', '9528', '/authority/deleteAuthority', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (141, 'p', '9528', '/authority/getAuthorityList', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (142, 'p', '9528', '/authority/setDataAuthority', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (169, 'p', '9528', '/autoCode/createTemp', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (160, 'p', '9528', '/casbin/getPolicyPathByAuthorityId', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (159, 'p', '9528', '/casbin/updateCasbin', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (167, 'p', '9528', '/customer/customer', 'DELETE', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (165, 'p', '9528', '/customer/customer', 'GET', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (166, 'p', '9528', '/customer/customer', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (164, 'p', '9528', '/customer/customer', 'PUT', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (168, 'p', '9528', '/customer/customerList', 'GET', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (157, 'p', '9528', '/fileUploadAndDownload/deleteFile', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (158, 'p', '9528', '/fileUploadAndDownload/editFileName', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (156, 'p', '9528', '/fileUploadAndDownload/getFileList', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (155, 'p', '9528', '/fileUploadAndDownload/upload', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (161, 'p', '9528', '/jwt/jsonInBlacklist', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (145, 'p', '9528', '/menu/addBaseMenu', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (147, 'p', '9528', '/menu/addMenuAuthority', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (149, 'p', '9528', '/menu/deleteBaseMenu', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (151, 'p', '9528', '/menu/getBaseMenuById', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (146, 'p', '9528', '/menu/getBaseMenuTree', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (143, 'p', '9528', '/menu/getMenu', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (148, 'p', '9528', '/menu/getMenuAuthority', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (144, 'p', '9528', '/menu/getMenuList', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (150, 'p', '9528', '/menu/updateBaseMenu', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (162, 'p', '9528', '/system/getSystemConfig', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (163, 'p', '9528', '/system/setSystemConfig', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (132, 'p', '9528', '/user/admin_register', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (152, 'p', '9528', '/user/changePassword', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (170, 'p', '9528', '/user/getUserInfo', 'GET', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (153, 'p', '9528', '/user/getUserList', 'POST', '', '', '', '', '');
-INSERT INTO `casbin_rule` VALUES (154, 'p', '9528', '/user/setUserAuthority', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (748, 'p', '888', '/api/createApi', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (749, 'p', '888', '/api/deleteApi', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (754, 'p', '888', '/api/deleteApisByIds', 'DELETE', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (752, 'p', '888', '/api/getAllApis', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (753, 'p', '888', '/api/getApiById', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (751, 'p', '888', '/api/getApiList', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (750, 'p', '888', '/api/updateApi', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (755, 'p', '888', '/authority/copyAuthority', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (756, 'p', '888', '/authority/createAuthority', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (757, 'p', '888', '/authority/deleteAuthority', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (759, 'p', '888', '/authority/getAuthorityList', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (760, 'p', '888', '/authority/setDataAuthority', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (758, 'p', '888', '/authority/updateAuthority', 'PUT', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (824, 'p', '888', '/authorityBtn/canRemoveAuthorityBtn', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (823, 'p', '888', '/authorityBtn/getAuthorityBtn', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (822, 'p', '888', '/authorityBtn/setAuthorityBtn', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (796, 'p', '888', '/autoCode/createPackage', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (793, 'p', '888', '/autoCode/createPlug', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (790, 'p', '888', '/autoCode/createTemp', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (798, 'p', '888', '/autoCode/delPackage', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (802, 'p', '888', '/autoCode/delSysHistory', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (792, 'p', '888', '/autoCode/getColumn', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (788, 'p', '888', '/autoCode/getDB', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (799, 'p', '888', '/autoCode/getMeta', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (797, 'p', '888', '/autoCode/getPackage', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (801, 'p', '888', '/autoCode/getSysHistory', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (789, 'p', '888', '/autoCode/getTables', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (794, 'p', '888', '/autoCode/installPlugin', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (791, 'p', '888', '/autoCode/preview', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (795, 'p', '888', '/autoCode/pubPlug', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (800, 'p', '888', '/autoCode/rollback', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (762, 'p', '888', '/casbin/getPolicyPathByAuthorityId', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (761, 'p', '888', '/casbin/updateCasbin', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (826, 'p', '888', '/chatGpt/createSK', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (828, 'p', '888', '/chatGpt/deleteSK', 'DELETE', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (827, 'p', '888', '/chatGpt/getSK', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (825, 'p', '888', '/chatGpt/getTable', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (785, 'p', '888', '/customer/customer', 'DELETE', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (786, 'p', '888', '/customer/customer', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (784, 'p', '888', '/customer/customer', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (783, 'p', '888', '/customer/customer', 'PUT', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (787, 'p', '888', '/customer/customerList', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (821, 'p', '888', '/email/emailTest', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (773, 'p', '888', '/fileUploadAndDownload/breakpointContinue', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (774, 'p', '888', '/fileUploadAndDownload/breakpointContinueFinish', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (777, 'p', '888', '/fileUploadAndDownload/deleteFile', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (778, 'p', '888', '/fileUploadAndDownload/editFileName', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (772, 'p', '888', '/fileUploadAndDownload/findFile', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (779, 'p', '888', '/fileUploadAndDownload/getFileList', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (775, 'p', '888', '/fileUploadAndDownload/removeChunk', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (776, 'p', '888', '/fileUploadAndDownload/upload', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (736, 'p', '888', '/jwt/jsonInBlacklist', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (763, 'p', '888', '/menu/addBaseMenu', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (771, 'p', '888', '/menu/addMenuAuthority', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (765, 'p', '888', '/menu/deleteBaseMenu', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (767, 'p', '888', '/menu/getBaseMenuById', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (769, 'p', '888', '/menu/getBaseMenuTree', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (764, 'p', '888', '/menu/getMenu', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (770, 'p', '888', '/menu/getMenuAuthority', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (768, 'p', '888', '/menu/getMenuList', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (766, 'p', '888', '/menu/updateBaseMenu', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (829, 'p', '888', '/pdMock/createPdMock', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (830, 'p', '888', '/pdMock/deletePdMock', 'DELETE', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (831, 'p', '888', '/pdMock/deletePdMockByIds', 'DELETE', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (833, 'p', '888', '/pdMock/findPdMock', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (834, 'p', '888', '/pdMock/getPdMockList', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (832, 'p', '888', '/pdMock/updatePdMock', 'PUT', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (835, 'p', '888', '/pdRelease/createPdRelease', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (836, 'p', '888', '/pdRelease/deletePdRelease', 'DELETE', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (837, 'p', '888', '/pdRelease/deletePdReleaseByIds', 'DELETE', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (839, 'p', '888', '/pdRelease/findPdRelease', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (840, 'p', '888', '/pdRelease/getPdReleaseList', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (838, 'p', '888', '/pdRelease/updatePdRelease', 'PUT', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (819, 'p', '888', '/simpleUploader/checkFileMd5', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (820, 'p', '888', '/simpleUploader/mergeFileMd5', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (818, 'p', '888', '/simpleUploader/upload', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (808, 'p', '888', '/sysDictionary/createSysDictionary', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (809, 'p', '888', '/sysDictionary/deleteSysDictionary', 'DELETE', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (811, 'p', '888', '/sysDictionary/findSysDictionary', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (812, 'p', '888', '/sysDictionary/getSysDictionaryList', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (810, 'p', '888', '/sysDictionary/updateSysDictionary', 'PUT', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (804, 'p', '888', '/sysDictionaryDetail/createSysDictionaryDetail', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (805, 'p', '888', '/sysDictionaryDetail/deleteSysDictionaryDetail', 'DELETE', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (806, 'p', '888', '/sysDictionaryDetail/findSysDictionaryDetail', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (807, 'p', '888', '/sysDictionaryDetail/getSysDictionaryDetailList', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (803, 'p', '888', '/sysDictionaryDetail/updateSysDictionaryDetail', 'PUT', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (813, 'p', '888', '/sysOperationRecord/createSysOperationRecord', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (816, 'p', '888', '/sysOperationRecord/deleteSysOperationRecord', 'DELETE', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (817, 'p', '888', '/sysOperationRecord/deleteSysOperationRecordByIds', 'DELETE', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (814, 'p', '888', '/sysOperationRecord/findSysOperationRecord', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (815, 'p', '888', '/sysOperationRecord/getSysOperationRecordList', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (780, 'p', '888', '/system/getServerInfo', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (781, 'p', '888', '/system/getSystemConfig', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (782, 'p', '888', '/system/setSystemConfig', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (738, 'p', '888', '/user/admin_register', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (744, 'p', '888', '/user/changePassword', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (737, 'p', '888', '/user/deleteUser', 'DELETE', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (747, 'p', '888', '/user/getUser', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (742, 'p', '888', '/user/getUserInfo', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (739, 'p', '888', '/user/getUserList', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (746, 'p', '888', '/user/resetPassword', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (741, 'p', '888', '/user/setSelfInfo', 'PUT', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (743, 'p', '888', '/user/setUserAuthorities', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (745, 'p', '888', '/user/setUserAuthority', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (740, 'p', '888', '/user/setUserInfo', 'PUT', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (849, 'p', '9528', '/api/createApi', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (850, 'p', '9528', '/api/deleteApi', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (853, 'p', '9528', '/api/getAllApis', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (854, 'p', '9528', '/api/getApiById', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (852, 'p', '9528', '/api/getApiList', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (851, 'p', '9528', '/api/updateApi', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (855, 'p', '9528', '/authority/createAuthority', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (856, 'p', '9528', '/authority/deleteAuthority', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (857, 'p', '9528', '/authority/getAuthorityList', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (858, 'p', '9528', '/authority/setDataAuthority', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (881, 'p', '9528', '/autoCode/createTemp', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (860, 'p', '9528', '/casbin/getPolicyPathByAuthorityId', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (859, 'p', '9528', '/casbin/updateCasbin', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (878, 'p', '9528', '/customer/customer', 'DELETE', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (879, 'p', '9528', '/customer/customer', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (877, 'p', '9528', '/customer/customer', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (876, 'p', '9528', '/customer/customer', 'PUT', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (880, 'p', '9528', '/customer/customerList', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (871, 'p', '9528', '/fileUploadAndDownload/deleteFile', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (872, 'p', '9528', '/fileUploadAndDownload/editFileName', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (873, 'p', '9528', '/fileUploadAndDownload/getFileList', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (870, 'p', '9528', '/fileUploadAndDownload/upload', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (841, 'p', '9528', '/jwt/jsonInBlacklist', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (861, 'p', '9528', '/menu/addBaseMenu', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (869, 'p', '9528', '/menu/addMenuAuthority', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (863, 'p', '9528', '/menu/deleteBaseMenu', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (865, 'p', '9528', '/menu/getBaseMenuById', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (867, 'p', '9528', '/menu/getBaseMenuTree', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (862, 'p', '9528', '/menu/getMenu', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (868, 'p', '9528', '/menu/getMenuAuthority', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (866, 'p', '9528', '/menu/getMenuList', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (864, 'p', '9528', '/menu/updateBaseMenu', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (882, 'p', '9528', '/pdMock/createPdMock', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (883, 'p', '9528', '/pdMock/deletePdMock', 'DELETE', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (884, 'p', '9528', '/pdMock/deletePdMockByIds', 'DELETE', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (886, 'p', '9528', '/pdMock/findPdMock', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (887, 'p', '9528', '/pdMock/getPdMockList', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (885, 'p', '9528', '/pdMock/updatePdMock', 'PUT', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (888, 'p', '9528', '/pdRelease/createPdRelease', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (889, 'p', '9528', '/pdRelease/deletePdRelease', 'DELETE', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (890, 'p', '9528', '/pdRelease/deletePdReleaseByIds', 'DELETE', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (892, 'p', '9528', '/pdRelease/findPdRelease', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (893, 'p', '9528', '/pdRelease/getPdReleaseList', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (891, 'p', '9528', '/pdRelease/updatePdRelease', 'PUT', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (874, 'p', '9528', '/system/getSystemConfig', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (875, 'p', '9528', '/system/setSystemConfig', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (842, 'p', '9528', '/user/admin_register', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (846, 'p', '9528', '/user/changePassword', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (848, 'p', '9528', '/user/getUser', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (845, 'p', '9528', '/user/getUserInfo', 'GET', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (843, 'p', '9528', '/user/getUserList', 'POST', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (844, 'p', '9528', '/user/setSelfInfo', 'PUT', '', '', '', '', '');
+INSERT INTO `casbin_rule` VALUES (847, 'p', '9528', '/user/setUserAuthority', 'POST', '', '', '', '', '');
 
 -- ----------------------------
 -- Table structure for exa_customers
@@ -198,7 +213,7 @@ CREATE TABLE `exa_customers`  (
   `sys_user_authority_id` bigint(20) UNSIGNED NULL DEFAULT NULL COMMENT '管理角色ID',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_exa_customers_deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of exa_customers
@@ -218,7 +233,7 @@ CREATE TABLE `exa_file_chunks`  (
   `file_chunk_path` varchar(191) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_exa_file_chunks_deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of exa_file_chunks
@@ -239,7 +254,7 @@ CREATE TABLE `exa_file_upload_and_downloads`  (
   `key` varchar(191) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '编号',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_exa_file_upload_and_downloads_deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of exa_file_upload_and_downloads
@@ -263,7 +278,7 @@ CREATE TABLE `exa_files`  (
   `is_finish` tinyint(1) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_exa_files_deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of exa_files
@@ -281,12 +296,14 @@ CREATE TABLE `jwt_blacklists`  (
   `jwt` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT 'jwt',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_jwt_blacklists_deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of jwt_blacklists
 -- ----------------------------
 INSERT INTO `jwt_blacklists` VALUES (1, '2023-07-13 18:14:20.419', '2023-07-13 18:14:20.419', NULL, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVVUlEIjoiYjU4MDE1M2UtY2FkMi00YTEzLTk3M2ItYTFiODM1NmRkYjljIiwiSUQiOjEsIlVzZXJuYW1lIjoiYWRtaW4iLCJOaWNrTmFtZSI6Ik1yLuWlh-a3vCIsIkF1dGhvcml0eUlkIjo4ODgsIkJ1ZmZlclRpbWUiOjg2NDAwLCJpc3MiOiJxbVBsdXMiLCJhdWQiOlsiR1ZBIl0sImV4cCI6MTY4OTc2NjI1OSwibmJmIjoxNjg5MTYxNDU5fQ.I4rwAJnFvmniEgtPIYqFGViL_MdRVfIA-wRS0o-acy0');
+
+
 
 -- ----------------------------
 -- Table structure for sys_api
@@ -308,7 +325,7 @@ CREATE TABLE `sys_api`  (
   INDEX `idx_sys_api_deleted_at`(`deleted_at` ASC) USING BTREE,
   INDEX `idx_sys_api_create_by`(`create_by` ASC) USING BTREE,
   INDEX `idx_sys_api_update_by`(`update_by` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 159 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 159 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_api
@@ -450,7 +467,7 @@ CREATE TABLE `sys_apis`  (
   `method` varchar(191) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'POST' COMMENT '方法',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_sys_apis_deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 105 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 106 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_apis
@@ -560,6 +577,7 @@ INSERT INTO `sys_apis` VALUES (102, '2023-07-10 00:04:53.590', '2023-07-10 00:04
 INSERT INTO `sys_apis` VALUES (103, '2023-07-10 00:04:53.590', '2023-07-10 00:04:53.590', NULL, '/pdRelease/updatePdRelease', '更新产品发布', 'pdRelease', 'PUT');
 INSERT INTO `sys_apis` VALUES (104, '2023-07-10 00:04:53.591', '2023-07-10 00:04:53.591', NULL, '/pdRelease/findPdRelease', '根据ID获取产品发布', 'pdRelease', 'GET');
 INSERT INTO `sys_apis` VALUES (105, '2023-07-10 00:04:53.591', '2023-07-10 00:04:53.591', NULL, '/pdRelease/getPdReleaseList', '获取产品发布列表', 'pdRelease', 'GET');
+INSERT INTO `sys_apis` VALUES (106, '2023-08-12 22:11:11.435', '2023-08-12 22:11:11.435', NULL, '/user/getUser', '根据id获取用户信息', '系统用户', 'POST');
 
 -- ----------------------------
 -- Table structure for sys_authorities
@@ -575,13 +593,13 @@ CREATE TABLE `sys_authorities`  (
   `default_router` varchar(191) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'dashboard' COMMENT '默认菜单',
   PRIMARY KEY (`authority_id`) USING BTREE,
   UNIQUE INDEX `authority_id`(`authority_id` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9528 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9529 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_authorities
 -- ----------------------------
 INSERT INTO `sys_authorities` VALUES ('2023-07-09 23:26:34.489', '2023-07-13 18:41:42.180', NULL, 888, '管理角色', 0, 'dashboard');
-INSERT INTO `sys_authorities` VALUES ('2023-07-09 23:26:34.489', '2023-07-09 23:26:34.814', NULL, 9528, '测试角色', 0, 'dashboard');
+INSERT INTO `sys_authorities` VALUES ('2023-07-09 23:26:34.489', '2023-07-26 12:06:42.317', NULL, 9528, '产品经理', 0, 'dashboard');
 
 -- ----------------------------
 -- Table structure for sys_authority_btns
@@ -591,7 +609,7 @@ CREATE TABLE `sys_authority_btns`  (
   `authority_id` bigint(20) UNSIGNED NULL DEFAULT NULL COMMENT '角色ID',
   `sys_menu_id` bigint(20) UNSIGNED NULL DEFAULT NULL COMMENT '菜单ID',
   `sys_base_menu_btn_id` bigint(20) UNSIGNED NULL DEFAULT NULL COMMENT '菜单按钮ID'
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_authority_btns
@@ -605,7 +623,7 @@ CREATE TABLE `sys_authority_menus`  (
   `sys_base_menu_id` bigint(20) UNSIGNED NOT NULL,
   `sys_authority_authority_id` bigint(20) UNSIGNED NOT NULL COMMENT '角色ID',
   PRIMARY KEY (`sys_base_menu_id`, `sys_authority_authority_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_authority_menus
@@ -620,7 +638,6 @@ INSERT INTO `sys_authority_menus` VALUES (5, 888);
 INSERT INTO `sys_authority_menus` VALUES (6, 888);
 INSERT INTO `sys_authority_menus` VALUES (7, 888);
 INSERT INTO `sys_authority_menus` VALUES (8, 888);
-INSERT INTO `sys_authority_menus` VALUES (8, 9528);
 INSERT INTO `sys_authority_menus` VALUES (9, 888);
 INSERT INTO `sys_authority_menus` VALUES (10, 888);
 INSERT INTO `sys_authority_menus` VALUES (11, 888);
@@ -628,8 +645,11 @@ INSERT INTO `sys_authority_menus` VALUES (16, 888);
 INSERT INTO `sys_authority_menus` VALUES (19, 888);
 INSERT INTO `sys_authority_menus` VALUES (24, 888);
 INSERT INTO `sys_authority_menus` VALUES (32, 888);
+INSERT INTO `sys_authority_menus` VALUES (32, 9528);
 INSERT INTO `sys_authority_menus` VALUES (33, 888);
+INSERT INTO `sys_authority_menus` VALUES (33, 9528);
 INSERT INTO `sys_authority_menus` VALUES (35, 888);
+INSERT INTO `sys_authority_menus` VALUES (35, 9528);
 
 -- ----------------------------
 -- Table structure for sys_auto_code_histories
@@ -652,7 +672,7 @@ CREATE TABLE `sys_auto_code_histories`  (
   `flag` bigint(20) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_sys_auto_code_histories_deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_auto_code_histories
@@ -674,7 +694,7 @@ CREATE TABLE `sys_auto_codes`  (
   `desc` varchar(191) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '描述',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_sys_auto_codes_deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_auto_codes
@@ -695,7 +715,7 @@ CREATE TABLE `sys_base_menu_btns`  (
   `sys_base_menu_id` bigint(20) UNSIGNED NULL DEFAULT NULL COMMENT '菜单ID',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_sys_base_menu_btns_deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_base_menu_btns
@@ -716,7 +736,7 @@ CREATE TABLE `sys_base_menu_parameters`  (
   `value` varchar(191) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '地址栏携带参数的值',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_sys_base_menu_parameters_deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_base_menu_parameters
@@ -746,7 +766,7 @@ CREATE TABLE `sys_base_menus`  (
   `close_tab` tinyint(1) NULL DEFAULT NULL COMMENT '附加属性',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_sys_base_menus_deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 35 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 36 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_base_menus
@@ -804,7 +824,7 @@ CREATE TABLE `sys_casbin_rule`  (
   `v7` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `idx_sys_casbin_rule`(`ptype` ASC, `v0` ASC, `v1` ASC, `v2` ASC, `v3` ASC, `v4` ASC, `v5` ASC, `v6` ASC, `v7` ASC) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_casbin_rule
@@ -816,7 +836,7 @@ CREATE TABLE `sys_casbin_rule`  (
 DROP TABLE IF EXISTS `sys_chat_gpt_options`;
 CREATE TABLE `sys_chat_gpt_options`  (
   `sk` varchar(191) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_chat_gpt_options
@@ -870,7 +890,7 @@ CREATE TABLE `sys_columns`  (
   INDEX `idx_sys_columns_deleted_at`(`deleted_at` ASC) USING BTREE,
   INDEX `idx_sys_columns_create_by`(`create_by` ASC) USING BTREE,
   INDEX `idx_sys_columns_update_by`(`update_by` ASC) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_columns
@@ -897,7 +917,7 @@ CREATE TABLE `sys_config`  (
   INDEX `idx_sys_config_create_by`(`create_by` ASC) USING BTREE,
   INDEX `idx_sys_config_update_by`(`update_by` ASC) USING BTREE,
   INDEX `idx_sys_config_deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_config
@@ -916,7 +936,7 @@ CREATE TABLE `sys_data_authority_id`  (
   `sys_authority_authority_id` bigint(20) UNSIGNED NOT NULL COMMENT '角色ID',
   `data_authority_id_authority_id` bigint(20) UNSIGNED NOT NULL COMMENT '角色ID',
   PRIMARY KEY (`sys_authority_authority_id`, `data_authority_id_authority_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_data_authority_id
@@ -950,7 +970,7 @@ CREATE TABLE `sys_dept`  (
   INDEX `idx_sys_dept_deleted_at`(`deleted_at` ASC) USING BTREE,
   INDEX `idx_sys_dept_create_by`(`create_by` ASC) USING BTREE,
   INDEX `idx_sys_dept_update_by`(`update_by` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_dept
@@ -986,7 +1006,7 @@ CREATE TABLE `sys_dict_data`  (
   INDEX `idx_sys_dict_data_create_by`(`create_by` ASC) USING BTREE,
   INDEX `idx_sys_dict_data_update_by`(`update_by` ASC) USING BTREE,
   INDEX `idx_sys_dict_data_deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 33 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 33 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_dict_data
@@ -1044,7 +1064,7 @@ CREATE TABLE `sys_dict_type`  (
   INDEX `idx_sys_dict_type_create_by`(`create_by` ASC) USING BTREE,
   INDEX `idx_sys_dict_type_update_by`(`update_by` ASC) USING BTREE,
   INDEX `idx_sys_dict_type_deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_dict_type
@@ -1076,7 +1096,7 @@ CREATE TABLE `sys_dictionaries`  (
   `desc` varchar(191) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '描述',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_sys_dictionaries_deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_dictionaries
@@ -1104,7 +1124,7 @@ CREATE TABLE `sys_dictionary_details`  (
   `sys_dictionary_id` bigint(20) UNSIGNED NULL DEFAULT NULL COMMENT '关联标记',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_sys_dictionary_details_deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 25 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_dictionary_details
@@ -1160,7 +1180,7 @@ CREATE TABLE `sys_job`  (
   INDEX `idx_sys_job_deleted_at`(`deleted_at` ASC) USING BTREE,
   INDEX `idx_sys_job_create_by`(`create_by` ASC) USING BTREE,
   INDEX `idx_sys_job_update_by`(`update_by` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_job
@@ -1191,7 +1211,7 @@ CREATE TABLE `sys_login_log`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_sys_login_log_create_by`(`create_by` ASC) USING BTREE,
   INDEX `idx_sys_login_log_update_by`(`update_by` ASC) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_login_log
@@ -1227,7 +1247,7 @@ CREATE TABLE `sys_menu`  (
   INDEX `idx_sys_menu_create_by`(`create_by` ASC) USING BTREE,
   INDEX `idx_sys_menu_update_by`(`update_by` ASC) USING BTREE,
   INDEX `idx_sys_menu_deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 542 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 542 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_menu
@@ -1311,7 +1331,7 @@ CREATE TABLE `sys_menu_api_rule`  (
   INDEX `fk_sys_menu_api_rule_sys_api`(`sys_api_id` ASC) USING BTREE,
   CONSTRAINT `fk_sys_menu_api_rule_sys_api` FOREIGN KEY (`sys_api_id`) REFERENCES `sys_api` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fk_sys_menu_api_rule_sys_menu` FOREIGN KEY (`sys_menu_menu_id`) REFERENCES `sys_menu` (`menu_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_menu_api_rule
@@ -1392,7 +1412,7 @@ CREATE TABLE `sys_migration`  (
   `version` varchar(191) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `apply_time` datetime(3) NULL DEFAULT NULL,
   PRIMARY KEY (`version`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_migration
@@ -1431,7 +1451,7 @@ CREATE TABLE `sys_opera_log`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_sys_opera_log_create_by`(`create_by` ASC) USING BTREE,
   INDEX `idx_sys_opera_log_update_by`(`update_by` ASC) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_opera_log
@@ -1458,11 +1478,35 @@ CREATE TABLE `sys_operation_records`  (
   `user_id` bigint(20) UNSIGNED NULL DEFAULT NULL COMMENT '用户id',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_sys_operation_records_deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 296 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 315 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_operation_records
 -- ----------------------------
+INSERT INTO `sys_operation_records` VALUES (296, '2023-07-26 12:00:26.521', '2023-07-26 12:00:26.521', NULL, '127.0.0.1', 'POST', '/pdMock/createPdMock', 200, 6951700, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.183', '', '{\"title\":\"测试原型\"}', '{\"code\":0,\"data\":{},\"msg\":\"创建成功\"}', 1);
+INSERT INTO `sys_operation_records` VALUES (297, '2023-07-26 12:00:48.399', '2023-07-26 12:00:48.399', NULL, '127.0.0.1', 'POST', '/pdRelease/createPdRelease', 200, 189131100, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.183', '', '{\"mockupId\":1,\"releaseNote\":\"123\",\"mockup_html\":\"\",\"mockupName\":\"\",\"mockupFile\":\"uploads/file/fe01ce2a7fbac8fafaed7c982a04e229_20230726120046.zip\"}', '{\"code\":0,\"data\":{},\"msg\":\"创建成功\"}', 1);
+INSERT INTO `sys_operation_records` VALUES (298, '2023-07-26 12:06:21.423', '2023-07-26 12:06:21.423', NULL, '127.0.0.1', 'POST', '/user/admin_register', 200, 131808900, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.183', '', '{\"username\":\"\",\"password\":\"123456\",\"nickName\":\"张三\",\"headerImg\":\"\",\"authorityId\":9528,\"authorityIds\":[9528],\"enable\":1,\"userName\":\"zhangsan\"}', '{\"code\":0,\"data\":{\"user\":{\"ID\":3,\"CreatedAt\":\"2023-07-26T12:06:21.34+08:00\",\"UpdatedAt\":\"2023-07-26T12:06:21.34+08:00\",\"uuid\":\"9d4524c5-b272-4d26-aee4-ef81e4ccd5ee\",\"userName\":\"zhangsan\",\"nickName\":\"张三\",\"sideMode\":\"dark\",\"headerImg\":\"https://qmplusimg.henrongyi.top/gva_header.jpg\",\"baseColor\":\"#fff\",\"activeColor\":\"#1890ff\",\"authorityId\":9528,\"authority\":{\"CreatedAt\":\"0001-01-01T00:00:00Z\",\"UpdatedAt\":\"0001-01-01T00:00:00Z\",\"DeletedAt\":null,\"authorityId\":0,\"authorityName\":\"\",\"parentId\":null,\"dataAuthorityId\":null,\"children\":null,\"menus\":null,\"defaultRouter\":\"\"},\"authorities\":[{\"CreatedAt\":\"2023-07-26T12:06:21.34+08:00\",\"UpdatedAt\":\"2023-07-26T12:06:21.34+08:00\",\"DeletedAt\":null,\"authorityId\":9528,\"authorityName\":\"\",\"parentId\":null,\"dataAuthorityId\":null,\"children\":null,\"menus\":null,\"defaultRouter\":\"dashboard\"}],\"phone\":\"\",\"email\":\"\",\"enable\":1}},\"msg\":\"注册成功\"}', 1);
+INSERT INTO `sys_operation_records` VALUES (299, '2023-07-26 12:06:33.122', '2023-07-26 12:06:33.122', NULL, '127.0.0.1', 'PUT', '/authority/updateAuthority', 200, 90388900, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.183', '', '{\"authorityId\":9528,\"authorityName\":\"产品经理\",\"parentId\":0}', '{\"code\":0,\"data\":{\"authority\":{\"CreatedAt\":\"0001-01-01T00:00:00Z\",\"UpdatedAt\":\"0001-01-01T00:00:00Z\",\"DeletedAt\":null,\"authorityId\":9528,\"authorityName\":\"产品经理\",\"parentId\":0,\"dataAuthorityId\":null,\"children\":null,\"menus\":null,\"defaultRouter\":\"\"}},\"msg\":\"更新成功\"}', 1);
+INSERT INTO `sys_operation_records` VALUES (300, '2023-07-26 12:06:42.357', '2023-07-26 12:06:42.357', NULL, '127.0.0.1', 'POST', '/menu/addMenuAuthority', 200, 40323600, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.183', '', '{\"menus\":[{\"ID\":32,\"CreatedAt\":\"2023-07-09T23:46:24.987+08:00\",\"UpdatedAt\":\"2023-07-09T23:46:24.987+08:00\",\"parentId\":\"0\",\"path\":\"mock\",\"name\":\"mock\",\"hidden\":false,\"component\":\"view/routerHolder.vue\",\"sort\":0,\"meta\":{\"activeName\":\"\",\"keepAlive\":false,\"defaultMenu\":false,\"title\":\"原型管理\",\"icon\":\"aim\",\"closeTab\":false},\"authoritys\":null,\"children\":[{\"ID\":33,\"CreatedAt\":\"2023-07-09T23:47:50.759+08:00\",\"UpdatedAt\":\"2023-07-09T23:47:50.759+08:00\",\"parentId\":\"32\",\"path\":\"mocklist\",\"name\":\"mocklist\",\"hidden\":false,\"component\":\"view/pdMock/pdMock.vue\",\"sort\":0,\"meta\":{\"activeName\":\"\",\"keepAlive\":false,\"defaultMenu\":false,\"title\":\"原型管理\",\"icon\":\"aim\",\"closeTab\":false},\"authoritys\":null,\"children\":null,\"parameters\":[],\"menuBtn\":[]},{\"ID\":35,\"CreatedAt\":\"2023-07-10T11:57:51.083+08:00\",\"UpdatedAt\":\"2023-07-12T18:03:33.702+08:00\",\"parentId\":\"32\",\"path\":\"release/:id\",\"name\":\"release\",\"hidden\":true,\"component\":\"view/pdRelease/pdRelease.vue\",\"sort\":0,\"meta\":{\"activeName\":\"\",\"keepAlive\":false,\"defaultMenu\":false,\"title\":\"发布列表\",\"icon\":\"alarm-clock\",\"closeTab\":false},\"authoritys\":null,\"children\":null,\"parameters\":[],\"menuBtn\":[]}],\"parameters\":[],\"menuBtn\":[]},{\"ID\":33,\"CreatedAt\":\"2023-07-09T23:47:50.759+08:00\",\"UpdatedAt\":\"2023-07-09T23:47:50.759+08:00\",\"parentId\":\"32\",\"path\":\"mocklist\",\"name\":\"mocklist\",\"hidden\":false,\"component\":\"view/pdMock/pdMock.vue\",\"sort\":0,\"meta\":{\"activeName\":\"\",\"keepAlive\":false,\"defaultMenu\":false,\"title\":\"原型管理\",\"icon\":\"aim\",\"closeTab\":false},\"authoritys\":null,\"children\":null,\"parameters\":[],\"menuBtn\":[]},{\"ID\":35,\"CreatedAt\":\"2023-07-10T11:57:51.083+08:00\",\"UpdatedAt\":\"2023-07-12T18:03:33.702+08:00\",\"parentId\":\"32\",\"path\":\"release/:id\",\"name\":\"release\",\"hidden\":true,\"component\":\"view/pdRelease/pdRelease.vue\",\"sort\":0,\"meta\":{\"activeName\":\"\",\"keepAlive\":false,\"defaultMenu\":false,\"title\":\"发布列表\",\"icon\":\"alarm-clock\",\"closeTab\":false},\"authoritys\":null,\"children\":null,\"parameters\":[],\"menuBtn\":[]},{\"ID\":1,\"CreatedAt\":\"2023-07-09T23:26:34.643+08:00\",\"UpdatedAt\":\"2023-07-09T23:26:34.643+08:00\",\"parentId\":\"0\",\"path\":\"dashboard\",\"name\":\"dashboard\",\"hidden\":false,\"component\":\"view/dashboard/index.vue\",\"sort\":1,\"meta\":{\"activeName\":\"\",\"keepAlive\":false,\"defaultMenu\":false,\"title\":\"仪表盘\",\"icon\":\"odometer\",\"closeTab\":false},\"authoritys\":null,\"children\":null,\"parameters\":[],\"menuBtn\":[]},{\"ID\":2,\"CreatedAt\":\"2023-07-09T23:26:34.643+08:00\",\"UpdatedAt\":\"2023-07-09T23:26:34.643+08:00\",\"parentId\":\"0\",\"path\":\"about\",\"name\":\"about\",\"hidden\":false,\"component\":\"view/about/index.vue\",\"sort\":9,\"meta\":{\"activeName\":\"\",\"keepAlive\":false,\"defaultMenu\":false,\"title\":\"关于我们\",\"icon\":\"info-filled\",\"closeTab\":false},\"authoritys\":null,\"children\":null,\"parameters\":[],\"menuBtn\":[]}],\"authorityId\":9528}', '{\"code\":0,\"data\":{},\"msg\":\"添加成功\"}', 1);
+INSERT INTO `sys_operation_records` VALUES (301, '2023-07-26 12:06:51.955', '2023-07-26 12:06:51.955', NULL, '127.0.0.1', 'POST', '/casbin/updateCasbin', 200, 42630700, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.183', '', '{\"authorityId\":9528,\"casbinInfos\":[{\"path\":\"/jwt/jsonInBlacklist\",\"method\":\"POST\"},{\"path\":\"/user/admin_register\",\"method\":\"POST\"},{\"path\":\"/user/getUserList\",\"method\":\"POST\"},{\"path\":\"/user/getUserInfo\",\"method\":\"GET\"},{\"path\":\"/user/changePassword\",\"method\":\"POST\"},{\"path\":\"/user/setUserAuthority\",\"method\":\"POST\"},{\"path\":\"/api/createApi\",\"method\":\"POST\"},{\"path\":\"/api/deleteApi\",\"method\":\"POST\"},{\"path\":\"/api/updateApi\",\"method\":\"POST\"},{\"path\":\"/api/getApiList\",\"method\":\"POST\"},{\"path\":\"/api/getAllApis\",\"method\":\"POST\"},{\"path\":\"/api/getApiById\",\"method\":\"POST\"},{\"path\":\"/authority/createAuthority\",\"method\":\"POST\"},{\"path\":\"/authority/deleteAuthority\",\"method\":\"POST\"},{\"path\":\"/authority/getAuthorityList\",\"method\":\"POST\"},{\"path\":\"/authority/setDataAuthority\",\"method\":\"POST\"},{\"path\":\"/casbin/updateCasbin\",\"method\":\"POST\"},{\"path\":\"/casbin/getPolicyPathByAuthorityId\",\"method\":\"POST\"},{\"path\":\"/menu/addBaseMenu\",\"method\":\"POST\"},{\"path\":\"/menu/getMenu\",\"method\":\"POST\"},{\"path\":\"/menu/deleteBaseMenu\",\"method\":\"POST\"},{\"path\":\"/menu/updateBaseMenu\",\"method\":\"POST\"},{\"path\":\"/menu/getBaseMenuById\",\"method\":\"POST\"},{\"path\":\"/menu/getMenuList\",\"method\":\"POST\"},{\"path\":\"/menu/getBaseMenuTree\",\"method\":\"POST\"},{\"path\":\"/menu/getMenuAuthority\",\"method\":\"POST\"},{\"path\":\"/menu/addMenuAuthority\",\"method\":\"POST\"},{\"path\":\"/fileUploadAndDownload/upload\",\"method\":\"POST\"},{\"path\":\"/fileUploadAndDownload/deleteFile\",\"method\":\"POST\"},{\"path\":\"/fileUploadAndDownload/editFileName\",\"method\":\"POST\"},{\"path\":\"/fileUploadAndDownload/getFileList\",\"method\":\"POST\"},{\"path\":\"/system/getSystemConfig\",\"method\":\"POST\"},{\"path\":\"/system/setSystemConfig\",\"method\":\"POST\"},{\"path\":\"/customer/customer\",\"method\":\"PUT\"},{\"path\":\"/customer/customer\",\"method\":\"POST\"},{\"path\":\"/customer/customer\",\"method\":\"DELETE\"},{\"path\":\"/customer/customer\",\"method\":\"GET\"},{\"path\":\"/customer/customerList\",\"method\":\"GET\"},{\"path\":\"/autoCode/createTemp\",\"method\":\"POST\"},{\"path\":\"/pdMock/createPdMock\",\"method\":\"POST\"},{\"path\":\"/pdMock/deletePdMock\",\"method\":\"DELETE\"},{\"path\":\"/pdMock/deletePdMockByIds\",\"method\":\"DELETE\"},{\"path\":\"/pdMock/updatePdMock\",\"method\":\"PUT\"},{\"path\":\"/pdMock/findPdMock\",\"method\":\"GET\"},{\"path\":\"/pdMock/getPdMockList\",\"method\":\"GET\"},{\"path\":\"/pdRelease/createPdRelease\",\"method\":\"POST\"},{\"path\":\"/pdRelease/deletePdRelease\",\"method\":\"DELETE\"},{\"path\":\"/pdRelease/deletePdReleaseByIds\",\"method\":\"DELETE\"},{\"path\":\"/pdRelease/updatePdRelease\",\"method\":\"PUT\"},{\"path\":\"/pdRelease/findPdRelease\",\"method\":\"GET\"},{\"path\":\"/pdRelease/getPdReleaseList\",\"method\":\"GET\"}]}', '{\"code\":0,\"data\":{},\"msg\":\"更新成功\"}', 1);
+INSERT INTO `sys_operation_records` VALUES (302, '2023-07-26 12:50:54.724', '2023-07-26 12:50:54.724', NULL, '127.0.0.1', 'POST', '/pdMock/createPdMock', 200, 6517500, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.183', '', '{\"title\":\"测试原型2\"}', '{\"code\":0,\"data\":{},\"msg\":\"创建成功\"}', 1);
+INSERT INTO `sys_operation_records` VALUES (303, '2023-07-26 12:51:06.396', '2023-07-26 12:51:06.396', NULL, '127.0.0.1', 'POST', '/pdMock/createPdMock', 200, 5816400, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.183', '', '{\"title\":\"张三的原型\"}', '{\"code\":0,\"data\":{},\"msg\":\"创建成功\"}', 3);
+INSERT INTO `sys_operation_records` VALUES (304, '2023-07-26 12:51:16.525', '2023-07-26 12:51:16.525', NULL, '127.0.0.1', 'POST', '/pdMock/createPdMock', 200, 5477700, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.183', '', '{\"title\":\"张三的原型1\"}', '{\"code\":0,\"data\":{},\"msg\":\"创建成功\"}', 3);
+INSERT INTO `sys_operation_records` VALUES (305, '2023-07-26 12:51:32.830', '2023-07-26 12:51:32.830', NULL, '127.0.0.1', 'DELETE', '/pdMock/deletePdMock', 200, 5789800, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.183', '', '{\"ID\":3}', '{\"code\":0,\"data\":{},\"msg\":\"删除成功\"}', 1);
+INSERT INTO `sys_operation_records` VALUES (306, '2023-08-05 10:38:04.020', '2023-08-05 10:38:04.020', NULL, '127.0.0.1', 'PUT', '/pdMock/updatePdMock', 200, 2508800, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.188', '', '{\"ID\":1,\"CreatedAt\":\"2023-07-26T12:00:26.514+08:00\",\"UpdatedAt\":\"2023-07-26T12:00:26.514+08:00\",\"title\":\"测试原型\",\"shareUrl\":\"\",\"shareStatus\":true,\"uid\":0}', '{\"code\":0,\"data\":{},\"msg\":\"更新成功\"}', 1);
+INSERT INTO `sys_operation_records` VALUES (307, '2023-08-11 11:52:43.185', '2023-08-11 11:52:43.185', NULL, '127.0.0.1', 'POST', '/pdRelease/createPdRelease', 200, 430226500, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.200', '', '{\"mockupId\":1,\"title\":\"111\",\"releaseNote\":\"1111\",\"mockup_html\":\"\",\"mockupName\":\"\",\"mockupFile\":\"uploads/file/fe01ce2a7fbac8fafaed7c982a04e229_20230811115241.zip\"}', '{\"code\":0,\"data\":{},\"msg\":\"创建成功\"}', 1);
+INSERT INTO `sys_operation_records` VALUES (308, '2023-08-11 18:49:34.383', '2023-08-11 18:49:34.383', NULL, '127.0.0.1', 'POST', '/pdRelease/createPdRelease', 200, 223727600, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', '', '{\"mockupId\":1,\"title\":\"111\",\"releaseNote\":\"<p>1111111111111111111111</p>\",\"mockup_html\":\"\",\"mockupName\":\"\",\"mockupFile\":\"uploads/file/fe01ce2a7fbac8fafaed7c982a04e229_20230811184931.zip\"}', '{\"code\":0,\"data\":{},\"msg\":\"创建成功\"}', 1);
+INSERT INTO `sys_operation_records` VALUES (309, '2023-08-11 18:52:20.608', '2023-08-11 18:52:20.608', NULL, '127.0.0.1', 'POST', '/pdRelease/createPdRelease', 200, 147060900, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', '', '{\"releaseNote\":\"<p>33333</p>\",\"mockup_html\":\"\",\"title\":\"333\",\"mockupFile\":\"uploads/file/fed7bea78a99d2216a5e7f97e9d87152_20230811185218.zip\",\"mockupId\":1}', '{\"code\":0,\"data\":{},\"msg\":\"创建成功\"}', 1);
+INSERT INTO `sys_operation_records` VALUES (310, '2023-08-11 18:58:58.244', '2023-08-11 18:58:58.244', NULL, '127.0.0.1', 'PUT', '/pdRelease/updatePdRelease', 200, 1230200, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', '', '{\"ID\":4,\"CreatedAt\":\"2023-08-11T18:52:20.607+08:00\",\"UpdatedAt\":\"2023-08-11T18:52:20.607+08:00\",\"mockupId\":1,\"title\":\"333\",\"releaseNote\":\"<p>44444</p>\",\"mockup_html\":\"mockup/f4fd62ee-d54e-4ca7-8d40-3d3b596ec2bf/原型0.2/\",\"CreatedBy\":1,\"UpdatedBy\":0,\"DeletedBy\":0}', '{\"code\":0,\"data\":{},\"msg\":\"更新成功\"}', 1);
+INSERT INTO `sys_operation_records` VALUES (311, '2023-08-11 18:59:02.358', '2023-08-11 18:59:02.358', NULL, '127.0.0.1', 'PUT', '/pdRelease/updatePdRelease', 200, 1127600, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', '', '{\"ID\":4,\"CreatedAt\":\"2023-08-11T18:52:20.607+08:00\",\"UpdatedAt\":\"2023-08-11T18:58:58.243+08:00\",\"mockupId\":1,\"title\":\"333\",\"releaseNote\":\"<p>44444</p>\",\"mockup_html\":\"mockup/f4fd62ee-d54e-4ca7-8d40-3d3b596ec2bf/原型0.2/\",\"CreatedBy\":1,\"UpdatedBy\":1,\"DeletedBy\":0}', '{\"code\":0,\"data\":{},\"msg\":\"更新成功\"}', 1);
+INSERT INTO `sys_operation_records` VALUES (312, '2023-08-11 21:17:06.071', '2023-08-11 21:17:06.071', NULL, '127.0.0.1', 'PUT', '/pdRelease/updatePdRelease', 200, 1464300, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', '', '{\"ID\":4,\"CreatedAt\":\"2023-08-11T18:52:20.607+08:00\",\"UpdatedAt\":\"2023-08-11T18:59:02.358+08:00\",\"mockupId\":1,\"title\":\"333\",\"releaseNote\":\"<p><em><code>2022-09-23</code></em></p>\\n<p><em>Feature</em></p>\\n<ul>\\n<li>升级&nbsp;<code>tinymce</code>&nbsp;版本，从 v5.8.x 版本升级到&nbsp;<code>v6.1.2</code>。新增&nbsp;<code>tinymce@6.1.2</code>&nbsp;静态资源包，位置在&nbsp;<code>dist/tinymce</code>&nbsp;目录</li>\\n</ul>\",\"mockup_html\":\"mockup/f4fd62ee-d54e-4ca7-8d40-3d3b596ec2bf/原型0.2/\",\"CreatedBy\":1,\"UpdatedBy\":1,\"DeletedBy\":0}', '{\"code\":0,\"data\":{},\"msg\":\"更新成功\"}', 1);
+INSERT INTO `sys_operation_records` VALUES (313, '2023-08-12 00:13:19.332', '2023-08-12 00:13:19.332', NULL, '127.0.0.1', 'PUT', '/pdRelease/updatePdRelease', 200, 1031100, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.200', '', '{\"ID\":4,\"CreatedAt\":\"2023-08-11T18:52:20.607+08:00\",\"UpdatedAt\":\"2023-08-11T21:17:06.07+08:00\",\"mockupId\":1,\"title\":\"333\",\"releaseNote\":\"<ul>\\n<li>升级&nbsp;<code>tinymce</code>&nbsp;版本，从 v5.8.x 版本升级到&nbsp;<code>v6.1.2</code>。新增&nbsp;<code>tinymce@6.1.2</code>&nbsp;静态资源包，位置在&nbsp;<code>dist/tinymce</code>&nbsp;目录</li>\\n<li>升级&nbsp;<code>tinymce</code>&nbsp;版本，从 v5.8.x 版本升级到&nbsp;<code>v6.1.2</code>。新增&nbsp;<code>tinymce@6.1.2</code>&nbsp;静态资源包，位置在&nbsp;<code>dist/tinymce</code>&nbsp;目录</li>\\n<li>升级&nbsp;<code>tinymce</code>&nbsp;版本，从 v5.8.x 版本升级到&nbsp;<code>v6.1.2</code>。新增&nbsp;<code>tinymce@6.1.2</code>&nbsp;静态资源包，位置在&nbsp;<code>dist/tinymce</code>&nbsp;目录</li>\\n</ul>\",\"mockup_html\":\"mockup/f4fd62ee-d54e-4ca7-8d40-3d3b596ec2bf/原型0.2/\",\"CreatedBy\":1,\"UpdatedBy\":1,\"DeletedBy\":0}', '{\"code\":0,\"data\":{},\"msg\":\"更新成功\"}', 1);
+INSERT INTO `sys_operation_records` VALUES (314, '2023-08-12 00:14:23.157', '2023-08-12 00:14:23.157', NULL, '127.0.0.1', 'POST', '/pdRelease/createPdRelease', 200, 144993500, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.200', '', '{\"releaseNote\":\"<p>Release note 1.1.7:</p>\\n<ol>\\n<li>优化用户搜索功能。</li>\\n<li>推送消息中使用群备注。</li>\\n<li>推送消息中添加发送者和目标头像。</li>\\n<li>优化撤回消息流程。</li>\\n</ol>\",\"mockup_html\":\"\",\"title\":\"Release version 1.1.7\",\"mockupFile\":\"uploads/file/fe01ce2a7fbac8fafaed7c982a04e229_20230812001421.zip\",\"mockupId\":1}', '{\"code\":0,\"data\":{},\"msg\":\"创建成功\"}', 1);
+INSERT INTO `sys_operation_records` VALUES (315, '2023-08-12 22:09:44.573', '2023-08-12 22:09:44.573', NULL, '127.0.0.1', 'POST', '/casbin/updateCasbin', 200, 86593600, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203', '', '{\"authorityId\":9528,\"casbinInfos\":[{\"path\":\"/jwt/jsonInBlacklist\",\"method\":\"POST\"},{\"path\":\"/user/admin_register\",\"method\":\"POST\"},{\"path\":\"/user/getUserList\",\"method\":\"POST\"},{\"path\":\"/user/setSelfInfo\",\"method\":\"PUT\"},{\"path\":\"/user/getUserInfo\",\"method\":\"GET\"},{\"path\":\"/user/changePassword\",\"method\":\"POST\"},{\"path\":\"/user/setUserAuthority\",\"method\":\"POST\"},{\"path\":\"/api/createApi\",\"method\":\"POST\"},{\"path\":\"/api/deleteApi\",\"method\":\"POST\"},{\"path\":\"/api/updateApi\",\"method\":\"POST\"},{\"path\":\"/api/getApiList\",\"method\":\"POST\"},{\"path\":\"/api/getAllApis\",\"method\":\"POST\"},{\"path\":\"/api/getApiById\",\"method\":\"POST\"},{\"path\":\"/authority/createAuthority\",\"method\":\"POST\"},{\"path\":\"/authority/deleteAuthority\",\"method\":\"POST\"},{\"path\":\"/authority/getAuthorityList\",\"method\":\"POST\"},{\"path\":\"/authority/setDataAuthority\",\"method\":\"POST\"},{\"path\":\"/casbin/updateCasbin\",\"method\":\"POST\"},{\"path\":\"/casbin/getPolicyPathByAuthorityId\",\"method\":\"POST\"},{\"path\":\"/menu/addBaseMenu\",\"method\":\"POST\"},{\"path\":\"/menu/getMenu\",\"method\":\"POST\"},{\"path\":\"/menu/deleteBaseMenu\",\"method\":\"POST\"},{\"path\":\"/menu/updateBaseMenu\",\"method\":\"POST\"},{\"path\":\"/menu/getBaseMenuById\",\"method\":\"POST\"},{\"path\":\"/menu/getMenuList\",\"method\":\"POST\"},{\"path\":\"/menu/getBaseMenuTree\",\"method\":\"POST\"},{\"path\":\"/menu/getMenuAuthority\",\"method\":\"POST\"},{\"path\":\"/menu/addMenuAuthority\",\"method\":\"POST\"},{\"path\":\"/fileUploadAndDownload/upload\",\"method\":\"POST\"},{\"path\":\"/fileUploadAndDownload/deleteFile\",\"method\":\"POST\"},{\"path\":\"/fileUploadAndDownload/editFileName\",\"method\":\"POST\"},{\"path\":\"/fileUploadAndDownload/getFileList\",\"method\":\"POST\"},{\"path\":\"/system/getSystemConfig\",\"method\":\"POST\"},{\"path\":\"/system/setSystemConfig\",\"method\":\"POST\"},{\"path\":\"/customer/customer\",\"method\":\"PUT\"},{\"path\":\"/customer/customer\",\"method\":\"POST\"},{\"path\":\"/customer/customer\",\"method\":\"DELETE\"},{\"path\":\"/customer/customer\",\"method\":\"GET\"},{\"path\":\"/customer/customerList\",\"method\":\"GET\"},{\"path\":\"/autoCode/createTemp\",\"method\":\"POST\"},{\"path\":\"/pdMock/createPdMock\",\"method\":\"POST\"},{\"path\":\"/pdMock/deletePdMock\",\"method\":\"DELETE\"},{\"path\":\"/pdMock/deletePdMockByIds\",\"method\":\"DELETE\"},{\"path\":\"/pdMock/updatePdMock\",\"method\":\"PUT\"},{\"path\":\"/pdMock/findPdMock\",\"method\":\"GET\"},{\"path\":\"/pdMock/getPdMockList\",\"method\":\"GET\"},{\"path\":\"/pdRelease/createPdRelease\",\"method\":\"POST\"},{\"path\":\"/pdRelease/deletePdRelease\",\"method\":\"DELETE\"},{\"path\":\"/pdRelease/deletePdReleaseByIds\",\"method\":\"DELETE\"},{\"path\":\"/pdRelease/updatePdRelease\",\"method\":\"PUT\"},{\"path\":\"/pdRelease/findPdRelease\",\"method\":\"GET\"},{\"path\":\"/pdRelease/getPdReleaseList\",\"method\":\"GET\"}]}', '{\"code\":0,\"data\":{},\"msg\":\"更新成功\"}', 1);
+INSERT INTO `sys_operation_records` VALUES (316, '2023-08-12 22:09:45.838', '2023-08-12 22:09:45.838', NULL, '127.0.0.1', 'POST', '/casbin/updateCasbin', 200, 12742400, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203', '', '{\"authorityId\":9528,\"casbinInfos\":[{\"path\":\"/jwt/jsonInBlacklist\",\"method\":\"POST\"},{\"path\":\"/user/admin_register\",\"method\":\"POST\"},{\"path\":\"/user/getUserList\",\"method\":\"POST\"},{\"path\":\"/user/setSelfInfo\",\"method\":\"PUT\"},{\"path\":\"/user/getUserInfo\",\"method\":\"GET\"},{\"path\":\"/user/changePassword\",\"method\":\"POST\"},{\"path\":\"/user/setUserAuthority\",\"method\":\"POST\"},{\"path\":\"/api/createApi\",\"method\":\"POST\"},{\"path\":\"/api/deleteApi\",\"method\":\"POST\"},{\"path\":\"/api/updateApi\",\"method\":\"POST\"},{\"path\":\"/api/getApiList\",\"method\":\"POST\"},{\"path\":\"/api/getAllApis\",\"method\":\"POST\"},{\"path\":\"/api/getApiById\",\"method\":\"POST\"},{\"path\":\"/authority/createAuthority\",\"method\":\"POST\"},{\"path\":\"/authority/deleteAuthority\",\"method\":\"POST\"},{\"path\":\"/authority/getAuthorityList\",\"method\":\"POST\"},{\"path\":\"/authority/setDataAuthority\",\"method\":\"POST\"},{\"path\":\"/casbin/updateCasbin\",\"method\":\"POST\"},{\"path\":\"/casbin/getPolicyPathByAuthorityId\",\"method\":\"POST\"},{\"path\":\"/menu/addBaseMenu\",\"method\":\"POST\"},{\"path\":\"/menu/getMenu\",\"method\":\"POST\"},{\"path\":\"/menu/deleteBaseMenu\",\"method\":\"POST\"},{\"path\":\"/menu/updateBaseMenu\",\"method\":\"POST\"},{\"path\":\"/menu/getBaseMenuById\",\"method\":\"POST\"},{\"path\":\"/menu/getMenuList\",\"method\":\"POST\"},{\"path\":\"/menu/getBaseMenuTree\",\"method\":\"POST\"},{\"path\":\"/menu/getMenuAuthority\",\"method\":\"POST\"},{\"path\":\"/menu/addMenuAuthority\",\"method\":\"POST\"},{\"path\":\"/fileUploadAndDownload/upload\",\"method\":\"POST\"},{\"path\":\"/fileUploadAndDownload/deleteFile\",\"method\":\"POST\"},{\"path\":\"/fileUploadAndDownload/editFileName\",\"method\":\"POST\"},{\"path\":\"/fileUploadAndDownload/getFileList\",\"method\":\"POST\"},{\"path\":\"/system/getSystemConfig\",\"method\":\"POST\"},{\"path\":\"/system/setSystemConfig\",\"method\":\"POST\"},{\"path\":\"/customer/customer\",\"method\":\"PUT\"},{\"path\":\"/customer/customer\",\"method\":\"POST\"},{\"path\":\"/customer/customer\",\"method\":\"DELETE\"},{\"path\":\"/customer/customer\",\"method\":\"GET\"},{\"path\":\"/customer/customerList\",\"method\":\"GET\"},{\"path\":\"/autoCode/createTemp\",\"method\":\"POST\"},{\"path\":\"/pdMock/createPdMock\",\"method\":\"POST\"},{\"path\":\"/pdMock/deletePdMock\",\"method\":\"DELETE\"},{\"path\":\"/pdMock/deletePdMockByIds\",\"method\":\"DELETE\"},{\"path\":\"/pdMock/updatePdMock\",\"method\":\"PUT\"},{\"path\":\"/pdMock/findPdMock\",\"method\":\"GET\"},{\"path\":\"/pdMock/getPdMockList\",\"method\":\"GET\"},{\"path\":\"/pdRelease/createPdRelease\",\"method\":\"POST\"},{\"path\":\"/pdRelease/deletePdRelease\",\"method\":\"DELETE\"},{\"path\":\"/pdRelease/deletePdReleaseByIds\",\"method\":\"DELETE\"},{\"path\":\"/pdRelease/updatePdRelease\",\"method\":\"PUT\"},{\"path\":\"/pdRelease/findPdRelease\",\"method\":\"GET\"},{\"path\":\"/pdRelease/getPdReleaseList\",\"method\":\"GET\"}]}', '{\"code\":0,\"data\":{},\"msg\":\"更新成功\"}', 1);
+INSERT INTO `sys_operation_records` VALUES (317, '2023-08-12 22:11:11.473', '2023-08-12 22:11:11.473', NULL, '127.0.0.1', 'POST', '/api/createApi', 200, 38775400, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203', '', '{\"path\":\"/user/getUser\",\"apiGroup\":\"系统用户\",\"method\":\"POST\",\"description\":\"根据id获取用户信息\"}', '{\"code\":0,\"data\":{},\"msg\":\"创建成功\"}', 1);
+INSERT INTO `sys_operation_records` VALUES (318, '2023-08-12 22:11:20.858', '2023-08-12 22:11:20.858', NULL, '127.0.0.1', 'POST', '/casbin/updateCasbin', 200, 41823200, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203', '', '{\"authorityId\":888,\"casbinInfos\":[{\"path\":\"/jwt/jsonInBlacklist\",\"method\":\"POST\"},{\"path\":\"/user/deleteUser\",\"method\":\"DELETE\"},{\"path\":\"/user/admin_register\",\"method\":\"POST\"},{\"path\":\"/user/getUserList\",\"method\":\"POST\"},{\"path\":\"/user/setUserInfo\",\"method\":\"PUT\"},{\"path\":\"/user/setSelfInfo\",\"method\":\"PUT\"},{\"path\":\"/user/getUserInfo\",\"method\":\"GET\"},{\"path\":\"/user/setUserAuthorities\",\"method\":\"POST\"},{\"path\":\"/user/changePassword\",\"method\":\"POST\"},{\"path\":\"/user/setUserAuthority\",\"method\":\"POST\"},{\"path\":\"/user/resetPassword\",\"method\":\"POST\"},{\"path\":\"/user/getUser\",\"method\":\"POST\"},{\"path\":\"/api/createApi\",\"method\":\"POST\"},{\"path\":\"/api/deleteApi\",\"method\":\"POST\"},{\"path\":\"/api/updateApi\",\"method\":\"POST\"},{\"path\":\"/api/getApiList\",\"method\":\"POST\"},{\"path\":\"/api/getAllApis\",\"method\":\"POST\"},{\"path\":\"/api/getApiById\",\"method\":\"POST\"},{\"path\":\"/api/deleteApisByIds\",\"method\":\"DELETE\"},{\"path\":\"/authority/copyAuthority\",\"method\":\"POST\"},{\"path\":\"/authority/createAuthority\",\"method\":\"POST\"},{\"path\":\"/authority/deleteAuthority\",\"method\":\"POST\"},{\"path\":\"/authority/updateAuthority\",\"method\":\"PUT\"},{\"path\":\"/authority/getAuthorityList\",\"method\":\"POST\"},{\"path\":\"/authority/setDataAuthority\",\"method\":\"POST\"},{\"path\":\"/casbin/updateCasbin\",\"method\":\"POST\"},{\"path\":\"/casbin/getPolicyPathByAuthorityId\",\"method\":\"POST\"},{\"path\":\"/menu/addBaseMenu\",\"method\":\"POST\"},{\"path\":\"/menu/getMenu\",\"method\":\"POST\"},{\"path\":\"/menu/deleteBaseMenu\",\"method\":\"POST\"},{\"path\":\"/menu/updateBaseMenu\",\"method\":\"POST\"},{\"path\":\"/menu/getBaseMenuById\",\"method\":\"POST\"},{\"path\":\"/menu/getMenuList\",\"method\":\"POST\"},{\"path\":\"/menu/getBaseMenuTree\",\"method\":\"POST\"},{\"path\":\"/menu/getMenuAuthority\",\"method\":\"POST\"},{\"path\":\"/menu/addMenuAuthority\",\"method\":\"POST\"},{\"path\":\"/fileUploadAndDownload/findFile\",\"method\":\"GET\"},{\"path\":\"/fileUploadAndDownload/breakpointContinue\",\"method\":\"POST\"},{\"path\":\"/fileUploadAndDownload/breakpointContinueFinish\",\"method\":\"POST\"},{\"path\":\"/fileUploadAndDownload/removeChunk\",\"method\":\"POST\"},{\"path\":\"/fileUploadAndDownload/upload\",\"method\":\"POST\"},{\"path\":\"/fileUploadAndDownload/deleteFile\",\"method\":\"POST\"},{\"path\":\"/fileUploadAndDownload/editFileName\",\"method\":\"POST\"},{\"path\":\"/fileUploadAndDownload/getFileList\",\"method\":\"POST\"},{\"path\":\"/system/getServerInfo\",\"method\":\"POST\"},{\"path\":\"/system/getSystemConfig\",\"method\":\"POST\"},{\"path\":\"/system/setSystemConfig\",\"method\":\"POST\"},{\"path\":\"/customer/customer\",\"method\":\"PUT\"},{\"path\":\"/customer/customer\",\"method\":\"POST\"},{\"path\":\"/customer/customer\",\"method\":\"DELETE\"},{\"path\":\"/customer/customer\",\"method\":\"GET\"},{\"path\":\"/customer/customerList\",\"method\":\"GET\"},{\"path\":\"/autoCode/getDB\",\"method\":\"GET\"},{\"path\":\"/autoCode/getTables\",\"method\":\"GET\"},{\"path\":\"/autoCode/createTemp\",\"method\":\"POST\"},{\"path\":\"/autoCode/preview\",\"method\":\"POST\"},{\"path\":\"/autoCode/getColumn\",\"method\":\"GET\"},{\"path\":\"/autoCode/createPlug\",\"method\":\"POST\"},{\"path\":\"/autoCode/installPlugin\",\"method\":\"POST\"},{\"path\":\"/autoCode/pubPlug\",\"method\":\"POST\"},{\"path\":\"/autoCode/createPackage\",\"method\":\"POST\"},{\"path\":\"/autoCode/getPackage\",\"method\":\"POST\"},{\"path\":\"/autoCode/delPackage\",\"method\":\"POST\"},{\"path\":\"/autoCode/getMeta\",\"method\":\"POST\"},{\"path\":\"/autoCode/rollback\",\"method\":\"POST\"},{\"path\":\"/autoCode/getSysHistory\",\"method\":\"POST\"},{\"path\":\"/autoCode/delSysHistory\",\"method\":\"POST\"},{\"path\":\"/sysDictionaryDetail/updateSysDictionaryDetail\",\"method\":\"PUT\"},{\"path\":\"/sysDictionaryDetail/createSysDictionaryDetail\",\"method\":\"POST\"},{\"path\":\"/sysDictionaryDetail/deleteSysDictionaryDetail\",\"method\":\"DELETE\"},{\"path\":\"/sysDictionaryDetail/findSysDictionaryDetail\",\"method\":\"GET\"},{\"path\":\"/sysDictionaryDetail/getSysDictionaryDetailList\",\"method\":\"GET\"},{\"path\":\"/sysDictionary/createSysDictionary\",\"method\":\"POST\"},{\"path\":\"/sysDictionary/deleteSysDictionary\",\"method\":\"DELETE\"},{\"path\":\"/sysDictionary/updateSysDictionary\",\"method\":\"PUT\"},{\"path\":\"/sysDictionary/findSysDictionary\",\"method\":\"GET\"},{\"path\":\"/sysDictionary/getSysDictionaryList\",\"method\":\"GET\"},{\"path\":\"/sysOperationRecord/createSysOperationRecord\",\"method\":\"POST\"},{\"path\":\"/sysOperationRecord/findSysOperationRecord\",\"method\":\"GET\"},{\"path\":\"/sysOperationRecord/getSysOperationRecordList\",\"method\":\"GET\"},{\"path\":\"/sysOperationRecord/deleteSysOperationRecord\",\"method\":\"DELETE\"},{\"path\":\"/sysOperationRecord/deleteSysOperationRecordByIds\",\"method\":\"DELETE\"},{\"path\":\"/simpleUploader/upload\",\"method\":\"POST\"},{\"path\":\"/simpleUploader/checkFileMd5\",\"method\":\"GET\"},{\"path\":\"/simpleUploader/mergeFileMd5\",\"method\":\"GET\"},{\"path\":\"/email/emailTest\",\"method\":\"POST\"},{\"path\":\"/authorityBtn/setAuthorityBtn\",\"method\":\"POST\"},{\"path\":\"/authorityBtn/getAuthorityBtn\",\"method\":\"POST\"},{\"path\":\"/authorityBtn/canRemoveAuthorityBtn\",\"method\":\"POST\"},{\"path\":\"/chatGpt/getTable\",\"method\":\"POST\"},{\"path\":\"/chatGpt/createSK\",\"method\":\"POST\"},{\"path\":\"/chatGpt/getSK\",\"method\":\"GET\"},{\"path\":\"/chatGpt/deleteSK\",\"method\":\"DELETE\"},{\"path\":\"/pdMock/createPdMock\",\"method\":\"POST\"},{\"path\":\"/pdMock/deletePdMock\",\"method\":\"DELETE\"},{\"path\":\"/pdMock/deletePdMockByIds\",\"method\":\"DELETE\"},{\"path\":\"/pdMock/updatePdMock\",\"method\":\"PUT\"},{\"path\":\"/pdMock/findPdMock\",\"method\":\"GET\"},{\"path\":\"/pdMock/getPdMockList\",\"method\":\"GET\"},{\"path\":\"/pdRelease/createPdRelease\",\"method\":\"POST\"},{\"path\":\"/pdRelease/deletePdRelease\",\"method\":\"DELETE\"},{\"path\":\"/pdRelease/deletePdReleaseByIds\",\"method\":\"DELETE\"},{\"path\":\"/pdRelease/updatePdRelease\",\"method\":\"PUT\"},{\"path\":\"/pdRelease/findPdRelease\",\"method\":\"GET\"},{\"path\":\"/pdRelease/getPdReleaseList\",\"method\":\"GET\"}]}', '{\"code\":0,\"data\":{},\"msg\":\"更新成功\"}', 1);
+INSERT INTO `sys_operation_records` VALUES (319, '2023-08-12 22:11:26.893', '2023-08-12 22:11:26.893', NULL, '127.0.0.1', 'POST', '/casbin/updateCasbin', 200, 31679100, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203', '', '{\"authorityId\":9528,\"casbinInfos\":[{\"path\":\"/jwt/jsonInBlacklist\",\"method\":\"POST\"},{\"path\":\"/user/admin_register\",\"method\":\"POST\"},{\"path\":\"/user/getUserList\",\"method\":\"POST\"},{\"path\":\"/user/setSelfInfo\",\"method\":\"PUT\"},{\"path\":\"/user/getUserInfo\",\"method\":\"GET\"},{\"path\":\"/user/changePassword\",\"method\":\"POST\"},{\"path\":\"/user/setUserAuthority\",\"method\":\"POST\"},{\"path\":\"/user/getUser\",\"method\":\"POST\"},{\"path\":\"/api/createApi\",\"method\":\"POST\"},{\"path\":\"/api/deleteApi\",\"method\":\"POST\"},{\"path\":\"/api/updateApi\",\"method\":\"POST\"},{\"path\":\"/api/getApiList\",\"method\":\"POST\"},{\"path\":\"/api/getAllApis\",\"method\":\"POST\"},{\"path\":\"/api/getApiById\",\"method\":\"POST\"},{\"path\":\"/authority/createAuthority\",\"method\":\"POST\"},{\"path\":\"/authority/deleteAuthority\",\"method\":\"POST\"},{\"path\":\"/authority/getAuthorityList\",\"method\":\"POST\"},{\"path\":\"/authority/setDataAuthority\",\"method\":\"POST\"},{\"path\":\"/casbin/updateCasbin\",\"method\":\"POST\"},{\"path\":\"/casbin/getPolicyPathByAuthorityId\",\"method\":\"POST\"},{\"path\":\"/menu/addBaseMenu\",\"method\":\"POST\"},{\"path\":\"/menu/getMenu\",\"method\":\"POST\"},{\"path\":\"/menu/deleteBaseMenu\",\"method\":\"POST\"},{\"path\":\"/menu/updateBaseMenu\",\"method\":\"POST\"},{\"path\":\"/menu/getBaseMenuById\",\"method\":\"POST\"},{\"path\":\"/menu/getMenuList\",\"method\":\"POST\"},{\"path\":\"/menu/getBaseMenuTree\",\"method\":\"POST\"},{\"path\":\"/menu/getMenuAuthority\",\"method\":\"POST\"},{\"path\":\"/menu/addMenuAuthority\",\"method\":\"POST\"},{\"path\":\"/fileUploadAndDownload/upload\",\"method\":\"POST\"},{\"path\":\"/fileUploadAndDownload/deleteFile\",\"method\":\"POST\"},{\"path\":\"/fileUploadAndDownload/editFileName\",\"method\":\"POST\"},{\"path\":\"/fileUploadAndDownload/getFileList\",\"method\":\"POST\"},{\"path\":\"/system/getSystemConfig\",\"method\":\"POST\"},{\"path\":\"/system/setSystemConfig\",\"method\":\"POST\"},{\"path\":\"/customer/customer\",\"method\":\"PUT\"},{\"path\":\"/customer/customer\",\"method\":\"POST\"},{\"path\":\"/customer/customer\",\"method\":\"DELETE\"},{\"path\":\"/customer/customer\",\"method\":\"GET\"},{\"path\":\"/customer/customerList\",\"method\":\"GET\"},{\"path\":\"/autoCode/createTemp\",\"method\":\"POST\"},{\"path\":\"/pdMock/createPdMock\",\"method\":\"POST\"},{\"path\":\"/pdMock/deletePdMock\",\"method\":\"DELETE\"},{\"path\":\"/pdMock/deletePdMockByIds\",\"method\":\"DELETE\"},{\"path\":\"/pdMock/updatePdMock\",\"method\":\"PUT\"},{\"path\":\"/pdMock/findPdMock\",\"method\":\"GET\"},{\"path\":\"/pdMock/getPdMockList\",\"method\":\"GET\"},{\"path\":\"/pdRelease/createPdRelease\",\"method\":\"POST\"},{\"path\":\"/pdRelease/deletePdRelease\",\"method\":\"DELETE\"},{\"path\":\"/pdRelease/deletePdReleaseByIds\",\"method\":\"DELETE\"},{\"path\":\"/pdRelease/updatePdRelease\",\"method\":\"PUT\"},{\"path\":\"/pdRelease/findPdRelease\",\"method\":\"GET\"},{\"path\":\"/pdRelease/getPdReleaseList\",\"method\":\"GET\"}]}', '{\"code\":0,\"data\":{},\"msg\":\"更新成功\"}', 1);
 
 -- ----------------------------
 -- Table structure for sys_post
@@ -1484,7 +1528,7 @@ CREATE TABLE `sys_post`  (
   INDEX `idx_sys_post_create_by`(`create_by` ASC) USING BTREE,
   INDEX `idx_sys_post_update_by`(`update_by` ASC) USING BTREE,
   INDEX `idx_sys_post_deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_post
@@ -1516,7 +1560,7 @@ CREATE TABLE `sys_role`  (
   INDEX `idx_sys_role_create_by`(`create_by` ASC) USING BTREE,
   INDEX `idx_sys_role_update_by`(`update_by` ASC) USING BTREE,
   INDEX `idx_sys_role_deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_role
@@ -1531,7 +1575,7 @@ CREATE TABLE `sys_role_dept`  (
   `role_id` smallint(6) NOT NULL,
   `dept_id` smallint(6) NOT NULL,
   PRIMARY KEY (`role_id`, `dept_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_role_dept
@@ -1548,7 +1592,7 @@ CREATE TABLE `sys_role_menu`  (
   INDEX `fk_sys_role_menu_sys_menu`(`menu_id` ASC) USING BTREE,
   CONSTRAINT `fk_sys_role_menu_sys_menu` FOREIGN KEY (`menu_id`) REFERENCES `sys_menu` (`menu_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fk_sys_role_menu_sys_role` FOREIGN KEY (`role_id`) REFERENCES `sys_role` (`role_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_role_menu
@@ -1595,7 +1639,7 @@ CREATE TABLE `sys_tables`  (
   INDEX `idx_sys_tables_deleted_at`(`deleted_at` ASC) USING BTREE,
   INDEX `idx_sys_tables_create_by`(`create_by` ASC) USING BTREE,
   INDEX `idx_sys_tables_update_by`(`update_by` ASC) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_tables
@@ -1629,7 +1673,7 @@ CREATE TABLE `sys_user`  (
   INDEX `idx_sys_user_create_by`(`create_by` ASC) USING BTREE,
   INDEX `idx_sys_user_update_by`(`update_by` ASC) USING BTREE,
   INDEX `idx_sys_user_deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_user
@@ -1644,13 +1688,14 @@ CREATE TABLE `sys_user_authority`  (
   `sys_user_id` bigint(20) UNSIGNED NOT NULL,
   `sys_authority_authority_id` bigint(20) UNSIGNED NOT NULL COMMENT '角色ID',
   PRIMARY KEY (`sys_user_id`, `sys_authority_authority_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_user_authority
 -- ----------------------------
 INSERT INTO `sys_user_authority` VALUES (1, 888);
 INSERT INTO `sys_user_authority` VALUES (1, 9528);
+INSERT INTO `sys_user_authority` VALUES (3, 9528);
 
 -- ----------------------------
 -- Table structure for sys_users
@@ -1677,13 +1722,14 @@ CREATE TABLE `sys_users`  (
   INDEX `idx_sys_users_deleted_at`(`deleted_at` ASC) USING BTREE,
   INDEX `idx_sys_users_uuid`(`uuid` ASC) USING BTREE,
   INDEX `idx_sys_users_username`(`username` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_users
 -- ----------------------------
 INSERT INTO `sys_users` VALUES (1, '2023-07-09 23:26:34.758', '2023-07-13 18:47:44.359', NULL, 'b580153e-cad2-4a13-973b-a1b8356ddb9c', 'admin', '$2a$10$PIu7WYcB44ZTfWARuLCBne8mIlbvpp1pvh/0nBoxnurr3HFZWOFxC', '管理员', 'dark', 'https://qmplusimg.henrongyi.top/gva_header.jpg', '#fff', '#1890ff', 888, '17611111111', '333333333@qq.com', 1);
 INSERT INTO `sys_users` VALUES (2, '2023-07-09 23:26:34.758', '2023-07-09 23:26:34.782', '2023-07-13 18:40:57.639', '531b11f2-88b4-446d-85e6-e248026b09a1', 'a303176530', '$2a$10$d1T34ZELLZ7W6fPJtk2sWOW0yG4XAOvVgR9uQAtLR9GsLTbw.ed.e', '用户1', 'dark', 'https:///qmplusimg.henrongyi.top/1572075907logo.png', '#fff', '#1890ff', 9528, '17611111111', '333333333@qq.com', 1);
+INSERT INTO `sys_users` VALUES (3, '2023-07-26 12:06:21.340', '2023-07-26 12:06:21.340', NULL, '9d4524c5-b272-4d26-aee4-ef81e4ccd5ee', 'zhangsan', '$2a$10$VBd9Af6Prrj19.mdx1cZSufx0UzIBo4d5ekC8gZwsa5.IwKqvlJ1S', '张三', 'dark', 'https://qmplusimg.henrongyi.top/gva_header.jpg', '#fff', '#1890ff', 9528, '', '', 1);
 
 -- ----------------------------
 -- Table structure for tb_demo
@@ -1701,7 +1747,7 @@ CREATE TABLE `tb_demo`  (
   INDEX `idx_tb_demo_update_by`(`update_by` ASC) USING BTREE,
   INDEX `idx_tb_demo_deleted_at`(`deleted_at` ASC) USING BTREE,
   INDEX `idx_tb_demo_create_by`(`create_by` ASC) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tb_demo

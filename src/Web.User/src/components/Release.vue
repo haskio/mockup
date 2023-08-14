@@ -23,7 +23,7 @@
 
                                     <v-card>
 
-                                        <v-card-title class="align-center mx-3 ">版本{{ item.ID }} :{{
+                                        <v-card-title class="align-center mx-3 ">#{{ item.ID }}  {{
                                             item.title }}</v-card-title>
                                         <v-card-text>
                                             <v-row align="center" class="mx-0">
