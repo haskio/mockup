@@ -53,7 +53,7 @@
           <template #default="scope">{{ formatDate(scope.row.CreatedAt) }}</template>
         </el-table-column>
 
-        <el-table-column align="left" label="创建者" width="130" v-if="loginUser">
+        <el-table-column align="left" label="创建者" width="160" v-if="loginUser">
           <template #default="scope">{{ scope.row.nickName }} ({{ scope.row.userName }} )</template>
         </el-table-column>
 
