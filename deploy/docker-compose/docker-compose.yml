@@ -5,8 +5,6 @@ services:
     container_name: mockupdb
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci 
     restart: always
-    expose:
-      - 3306
     ports:
       - 3306:3306 
     environment:
@@ -28,30 +26,30 @@ services:
     container_name: server
     restart: always
     volumes: 
-      - ./data/uploads/:/mockup/server/uploads/
-      - ./data/mockup/:/mockup/server/mockup/
+      - ./data/uploads/:/opt/mockup/server/uploads/file
+      - ./data/mockup/:/opt/mockup/server/uploads/mockup
     ports:
-      - 8888:8888
+      - 8888:80
     depends_on:
       - mockupdb   
     networks:
         mockup:
           ipv4_address: 177.6.0.12
       
-  mockupnginx:
-    image: nginx:latest
-    container_name: mockupnginx
-    ports:
-      - 8880:80  # 暴露端口
-    volumes: # 挂载
-      - ./conf/web:/usr/share/nginx/html
-      - ./conf/nginx/nginx.conf:/etc/nginx/nginx.conf
-      - /etc/localtime:/etc/localtime
-    restart: always
-    privileged: true 
-    networks:
-        mockup:
-          ipv4_address: 177.6.0.13
+  # mockupnginx:
+  #   image: nginx:latest
+  #   container_name: mockupnginx
+  #   ports:
+  #     - 8880:80  # 暴露端口
+  #   volumes: # 挂载
+  #     - ./conf/web:/usr/share/nginx/html
+  #     - ./conf/nginx/nginx.conf:/etc/nginx/nginx.conf
+  #     - /etc/localtime:/etc/localtime
+  #   restart: always
+  #   privileged: true 
+  #   networks:
+  #       mockup:
+  #         ipv4_address: 177.6.0.13
       
       
 networks:

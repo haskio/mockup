@@ -61,8 +61,6 @@
                             </v-timeline-item>
                         </v-timeline>
 
-
-
                         <!-- </v-sheet> -->
                     </v-col>
                 </v-row>
@@ -125,12 +123,19 @@ export default {
         },
 
         toHtml(url) {
-            const toUrl = this.$http.defaults.baseURL + '/' + url
+            //const toUrl = this.$http.defaults.baseURL + '/' + url
             //console.log(toUrl);
+            const toUrl =  '/' + url
 
             window.open(toUrl, '_blank')
         },
 
+
+        // getUrl(url) {
+        //     const path = import.meta.env.VITE_BASE_API + '/'
+
+        //     return url && url.slice(0, 4) !== 'http' ? path + url : url
+        // }
 
     },
     computed: {

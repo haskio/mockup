@@ -90,7 +90,7 @@ http://pd.wuyusoft.com/admin
 
 ### 原型查看端
 
-[点击访问](http://pd.wuyusoft.com/pd/84439d71-cb9e-4ef7-a541-c123ac3fab05)
+[点击访问](http://pd.wuyusoft.com/front/#/pd/dcec94df-35f4-40e1-b6ec-5d19ea7c61ae)
 
 
 ## 相关说明
