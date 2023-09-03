@@ -30,6 +30,6 @@ type Server struct {
 	// 跨域配置
 	Cors CORS `mapstructure:"cors" json:"cors" yaml:"cors"`
 
-	//审核配置
+	// 审核配置
 	MockupApprove MockupApprove `mapstructure:"mockup" json:"mockup" yaml:"mockup"`
 }
