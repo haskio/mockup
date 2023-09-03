@@ -41,10 +41,7 @@
           <el-form-item label="限流时间">
             <el-input-number v-model.number="config.system['iplimit-time']" />
           </el-form-item>
-          <el-tooltip
-            content="请修改完成后，注意一并修改前端env环境下的VITE_BASE_PATH"
-            placement="top-start"
-          >
+          <el-tooltip content="请修改完成后，注意一并修改前端env环境下的VITE_BASE_PATH" placement="top-start">
             <el-form-item label="全局路由前缀">
               <el-input v-model="config.system['router-prefix']" />
             </el-form-item>
@@ -361,14 +358,25 @@
           <el-form-item label="Spec(CRON表达式)">
             <el-input v-model="config.timer.spec" />
           </el-form-item>
-          <template v-for="(item,k) in config.timer.detail">
-            <div v-for="(_,k2) in item" :key="k2">
-              <el-form-item :key="k+k2" :label="k2">
+          <template v-for="(item, k) in config.timer.detail">
+            <div v-for="(_, k2) in item" :key="k2">
+              <el-form-item :key="k + k2" :label="k2">
                 <el-input v-model="item[k2]" />
               </el-form-item>
             </div>
           </template>
         </el-collapse-item>
+
+        <el-collapse-item title="原型审核配置" name="14">
+          <el-form-item label="原型审核（是否启用）">
+            <el-checkbox v-model="config.mockup['approve']" />
+          </el-form-item>
+          
+        </el-collapse-item>
+
+
+
+
       </el-collapse>
     </el-form>
     <div class="gva-btn-list">
@@ -411,18 +419,19 @@ const config = ref({
   email: {},
   timer: {
     detail: {}
-  }
+  },
+  mockup: {},
 })
 
-const initForm = async() => {
+const initForm = async () => {
   const res = await getSystemConfig()
   if (res.code === 0) {
     config.value = res.data.config
   }
 }
 initForm()
-const reload = () => {}
-const update = async() => {
+const reload = () => { }
+const update = async () => {
   const res = await setSystemConfig({ config: config.value })
   if (res.code === 0) {
     ElMessage({
@@ -432,7 +441,7 @@ const update = async() => {
     await initForm()
   }
 }
-const email = async() => {
+const email = async () => {
   const res = await emailTest()
   if (res.code === 0) {
     ElMessage({
@@ -453,19 +462,22 @@ const email = async() => {
 <style lang="scss">
 .system {
   background: #fff;
-  padding:36px;
+  padding: 36px;
   border-radius: 2px;
+
   h2 {
     padding: 10px;
     margin: 10px 0;
     font-size: 16px;
     box-shadow: -4px 0px 0px 0px #e7e8e8;
   }
-  ::v-deep(.el-input-number__increase){
-    top:5px !important;
+
+  ::v-deep(.el-input-number__increase) {
+    top: 5px !important;
   }
-  .gva-btn-list{
-    margin-top:16px;
+
+  .gva-btn-list {
+    margin-top: 16px;
   }
 }
 </style>

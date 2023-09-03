@@ -7,7 +7,7 @@ aliyun-oss:
   base-path: yourBasePath
 autocode:
   transfer-restart: true
-  root: D:\codespace\code\gin-vue
+  root: E:\codespace\github\mockup_gh\src
   server: /server
   server-api: /api/v1/%s
   server-plug: /plugin/%s
@@ -92,6 +92,8 @@ jwt:
 local:
   path: uploads/file
   store-path: uploads/file
+mockup:
+  approve: true
 mssql:
   path: ""
   port: ""
@@ -112,7 +114,7 @@ mysql:
   config: charset=utf8mb4&parseTime=True&loc=Local
   db-name: mockup
   username: root
-  password: 123456
+  password: "12345678"
   prefix: ""
   singular: false
   engine: ""
@@ -204,7 +206,7 @@ timer:
     interval: 168h
 zap:
   level: info
-  prefix: '【mokcup-server】'
+  prefix: 【mokcup-server】
   format: console
   director: log
   encode-level: LowercaseColorLevelEncoder

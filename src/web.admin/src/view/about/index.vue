@@ -1,10 +1,37 @@
 <template>
   <div>
     <el-row :gutter="10">
+
       <el-col :span="12">
         <el-card>
           <template #header>
-            <el-divider>gin-vue-admin</el-divider>
+            <div>无鱼软件</div>
+          </template>
+          <div>
+            <el-row>
+              <el-col>
+                官网: <a href="http://www.wuyu-soft.com">http://www.wuyu-soft.com </a>
+              </el-col>
+            </el-row>
+            <el-row>
+              <el-col>仓库地址： </el-col>
+
+
+                <el-col>gitee  <a href="https://gitee.com/wy-soft/mockup">https://gitee.com/wy-soft/mockup  </a>  </el-col>
+
+
+                <el-col>github  <a href="https://github.com/haskio/mockup">https://github.com/haskio/mockup  </a>  </el-col>
+
+            </el-row>
+            <el-row>QQ群：7834330</el-row>
+          </div>
+        </el-card>
+      </el-col>
+
+      <el-col :span="12">
+        <el-card>
+          <template #header>
+            <el-divider>本系统使用gva框架</el-divider>
           </template>
           <div>
             <el-row>
@@ -18,54 +45,12 @@
                 </a>
               </el-col>
             </el-row>
-            <el-row :gutter="10">
-              <el-col :span="8">
-                <a href="https://github.com/flipped-aurora/gin-vue-admin">
-                  <img
-                    class="dom-center"
-                    src="https://img.shields.io/github/watchers/flipped-aurora/gin-vue-admin.svg?label=Watch"
-                    alt=""
-                  >
-                </a>
-              </el-col>
-              <el-col :span="8">
-                <a href="https://github.com/flipped-aurora/gin-vue-admin">
-                  <img
-                    class="dom-center"
-                    src="https://img.shields.io/github/stars/flipped-aurora/gin-vue-admin.svg?style=social"
-                    alt=""
-                  >
-                </a>
-              </el-col>
-              <el-col :span="8">
-                <a href="https://github.com/flipped-aurora/gin-vue-admin">
-                  <img
-                    class="dom-center"
-                    src="https://img.shields.io/github/forks/flipped-aurora/gin-vue-admin.svg?label=Fork"
-                    alt=""
-                  >
-                </a>
-              </el-col>
-            </el-row>
           </div>
         </el-card>
       </el-col>
-      <el-col :span="12">
-        <el-card>
-          <template #header>
-            <div>无鱼软件</div>
-          </template>
-          <div>
-            <el-row>
-              <el-col>
-                官网: <a href="http://www.wuyu-soft.com">http://www.wuyu-soft.com </a>
-              </el-col>
-            </el-row>
-            <el-row>仓库地址： </el-row>
-            <el-row>QQ群：7834330</el-row>
-          </div>
-        </el-card>
-      </el-col>
+
+
+    
     </el-row>
   </div>
 </template>

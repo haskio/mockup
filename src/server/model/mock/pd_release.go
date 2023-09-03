@@ -16,6 +16,7 @@ type PdRelease struct {
 	CreatedBy   uint   `gorm:"column:created_by;comment:创建者"`
 	UpdatedBy   uint   `gorm:"column:updated_by;comment:更新者"`
 	DeletedBy   uint   `gorm:"column:deleted_by;comment:删除者"`
+	isApprove   uint   `gorm:"column:is_approve;comment:审核状态	0表示未审核  1表示已审核，2表示已驳回"`
 }
 
 // TableName PdRelease 表名
