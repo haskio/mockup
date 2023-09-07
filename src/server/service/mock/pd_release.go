@@ -27,6 +27,13 @@ func (pdReleaseService *PdReleaseService) CreatePdRelease(pdRelease *mock.PdRele
 	//mockFilePath := mockPath + file[0]
 
 	//err = global.DeCompress(file[1], mock)
+	isApprove := global.GVA_CONFIG.MockupApprove.Approve
+
+	if isApprove == true {
+		pdRelease.IsApprove = 2
+	} else {
+		pdRelease.IsApprove = 0
+	}
 
 	path := pdRelease.MockupFile
 
@@ -113,6 +120,8 @@ func (pdReleaseService *PdReleaseService) UpdatePdRelease(pdRelease mock.PdRelea
 func (pdReleaseService *PdReleaseService) GetPdRelease(id uint) (pdRelease mock.PdRelease, err error) {
 	err = global.GVA_DB.Where("id = ?", id).First(&pdRelease).Error
 	pdRelease.MockupFile = ""
+	// isApprove := global.GVA_CONFIG.MockupApprove.Approve
+
 	return
 }
 
@@ -139,4 +148,13 @@ func (pdReleaseService *PdReleaseService) GetPdReleaseInfoList(info mockReq.PdRe
 
 	err = db.Limit(limit).Offset(offset).Where("mockup_id = ?", info.MockupId).Find(&pdReleases).Error
 	return pdReleases, total, err
+}
+
+// GetPdRelease 根据id获取PdRelease记录
+// Author [piexlmax](https://github.com/piexlmax)
+func (pdReleaseService *PdReleaseService) GetApprove() (isApprove bool) {
+
+	isApprove = global.GVA_CONFIG.MockupApprove.Approve
+
+	return isApprove
 }

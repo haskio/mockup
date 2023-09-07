@@ -29,6 +29,7 @@ var pdReleaseService = service.ServiceGroupApp.MockServiceGroup.PdReleaseService
 // @Router /pdRelease/createPdRelease [post]
 func (pdReleaseApi *PdReleaseApi) CreatePdRelease(c *gin.Context) {
 	var pdRelease mock.PdRelease
+
 	err := c.ShouldBindJSON(&pdRelease)
 	if err != nil {
 		response.FailWithMessage(err.Error(), c)
@@ -185,4 +186,11 @@ func (pdReleaseApi *PdReleaseApi) GetPdReleaseList(c *gin.Context) {
 			PageSize: pageInfo.PageSize,
 		}, "获取成功", c)
 	}
+}
+
+func (pdReleaseApi *PdReleaseApi) GetApproveStatus(c *gin.Context) {
+
+	approve := pdReleaseService.GetApprove()
+
+	response.OkWithData(gin.H{"approve": approve}, c)
 }

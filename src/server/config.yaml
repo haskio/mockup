@@ -93,7 +93,7 @@ local:
   path: uploads/file
   store-path: uploads/file
 mockup:
-  approve: true
+  approve: false
 mssql:
   path: ""
   port: ""

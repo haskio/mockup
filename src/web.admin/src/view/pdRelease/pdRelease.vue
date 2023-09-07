@@ -59,7 +59,13 @@
         <el-table-column align="left" label="发布日期" width="160">
           <template #default="scope">{{ formatDate(scope.row.CreatedAt) }}</template>
         </el-table-column>
-        <el-table-column align="left" label="发布日期" width="160">
+        <el-table-column  v-if="approveStatus"  align="left" label="审核状态"  prop="is_approve"  width="160">
+          <template #default="scope">
+            <v-tag v-if="scope.row.isApprove == 0"> 无需审核 </v-tag>
+            <v-tag v-else-if="scope.row.isApprove == 1"> 已通过 </v-tag>
+            <v-tag v-else-if="scope.row.isApprove == 2"> 待审核 </v-tag>
+            <v-tag v-else-if="scope.row.isApprove == 3"> 已驳回 </v-tag>
+          </template>
         </el-table-column>
 
         <el-table-column align="left" label="访问链接" prop="mockup_html" width="120">
@@ -165,7 +171,8 @@ import {
   deletePdReleaseByIds,
   updatePdRelease,
   findPdRelease,
-  getPdReleaseList
+  getPdReleaseList,
+  getApprove
 } from '@/api/pdRelease'
 import { getUrl } from '@/utils/image'
 // 文件选择组件
@@ -205,6 +212,9 @@ const path = import.meta.env.VITE_BASE_PATH + '/'
 // console.log("path:",editPath)
 
 const mockupId = parseInt(route.params.id)   
+
+
+
 onBeforeRouteUpdate((to) => {
   if (to.name === 'PdRelease') {
     formData.mockupId = to.params.id
@@ -249,9 +259,18 @@ const editRule = reactive({
   },
   ],
 })
+//获得审核状态
+const approveStatus =  ref()
 
 
+const getApproveStatus = async()=>{
+    const res =  await getApprove()
+    approveStatus.value= res.data.approve
+   // console.log("app:",approveStatus.value)
+  }
 
+
+  getApproveStatus()
 
 const getMockupInfo = async (id) => {
   const res = await findPdMock({ ID: id })

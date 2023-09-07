@@ -22,6 +22,9 @@ func (s *PdReleaseRouter) InitPdReleaseRouter(Router *gin.RouterGroup, RouterPub
 		pdReleaseRouter.DELETE("deletePdRelease", pdReleaseApi.DeletePdRelease)           // 删除PdRelease
 		pdReleaseRouter.DELETE("deletePdReleaseByIds", pdReleaseApi.DeletePdReleaseByIds) // 批量删除PdRelease
 		pdReleaseRouter.PUT("updatePdRelease", pdReleaseApi.UpdatePdRelease)              // 更新PdRelease
+
+		pdReleaseRouter.GET("getApproveStatus", pdReleaseApi.GetApproveStatus) // 更新PdRelease
+
 	}
 	{
 		pdReleaseRouterWithoutRecord.GET("findPdRelease", pdReleaseApi.FindPdRelease)       // 根据ID获取PdRelease

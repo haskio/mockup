@@ -16,9 +16,7 @@
             <el-row>
               <el-col>仓库地址： </el-col>
 
-
                 <el-col>gitee  <a href="https://gitee.com/wy-soft/mockup">https://gitee.com/wy-soft/mockup  </a>  </el-col>
-
 
                 <el-col>github  <a href="https://github.com/haskio/mockup">https://github.com/haskio/mockup  </a>  </el-col>
 
@@ -48,8 +46,6 @@
           </div>
         </el-card>
       </el-col>
-
-
     
     </el-row>
   </div>

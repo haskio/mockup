@@ -3,7 +3,7 @@
  */
 
 const config = {
-  appName: '无鱼原型管理系统管理后台',
+  appName: '无鱼原型管理系统',
   appLogo: 'https://www.gin-vue-admin.com/img/logo.png',
   showViteLogo: true
 }

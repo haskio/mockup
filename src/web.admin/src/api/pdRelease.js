@@ -95,3 +95,12 @@ export const getPdReleaseList = (params) => {
     params
   })
 }
+
+
+// 获取审核状态
+export const getApprove = () => {
+  return service({
+    url: '/pdRelease/getApproveStatus',
+    method: 'get',
+  })
+}
