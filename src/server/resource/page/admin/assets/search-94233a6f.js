@@ -1,4 +1,0 @@
-/*! 
- Build based on gin-vue-admin 
- Time : 1689330001000 */
-import s from"./index-3259008c.js";import{r as e,o,c as a,b as r,n as c,d as t,ap as i}from"./index-05337088.js";import{_ as n}from"./_plugin-vue_export-helper-1b428a4d.js";const l={class:"search-component"},p={class:"user-box"},u={class:"user-box"},d={name:"BtnBox"},v=n(Object.assign(d,{setup(n){const d=e(!1),v=()=>{d.value=!0,i.emit("reload"),setTimeout((()=>{d.value=!1}),500)},m=()=>{window.open("https://support.qq.com/product/371961")};return(e,i)=>(o(),a("div",l,[r("div",p,[r("div",{class:c(["gvaIcon gvaIcon-refresh",[d.value?"reloading":""]]),onClick:v},null,2)]),r("div",u,[t(s,{class:"search-icon",style:{cursor:"pointer"}})]),r("div",{class:"user-box"},[r("div",{class:"service gvaIcon-customer-service",onClick:m})])]))}}),[["__scopeId","data-v-4a45c246"]]);export{v as default};
